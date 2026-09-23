@@ -1,0 +1,25 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 { 
+  font-size: 140%;
+}
+
+a:link {
+  color: #3498db;
+  text-decoration: none; /* Removes the default underline */
+}
+
+a:visited {
+  color: #000000;
+}
+
+a:hover {
+  color: #2980b9;
+  text-decoration: underline; /* Adds the underline back on hover */
+}
+
+a:active {
+  color: #e74c3c;
+}
