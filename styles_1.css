@@ -7,21 +7,21 @@ h1 {
 }
 
 a {
-  text-decoration: underline;
-}
-
-a:link {
-  color: #3498db;
+  color: #0000EE;              /* standard link blue */
+  text-decoration: underline;  /* always underlined */
 }
 
 a:visited {
-  color: #000000;
+  color: #551A8B;              /* standard visited purple */
 }
 
-a:hover {
-  color: #2980b9;
+a:hover,
+a:focus {
+  color: #0000EE;              /* keep standard blue on hover/focus */
+  text-decoration: underline;  /* no change, stays underlined */
 }
 
 a:active {
-  color: #e74c3c;
+  color: #FF0000;              /* standard active red */
+  text-decoration: underline;
 }
