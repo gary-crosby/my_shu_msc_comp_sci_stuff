@@ -29,3 +29,6 @@ a:active {
 li:not(:last-child) {
   margin-bottom: 1.00rem;
 }
+li p {
+  margin: 0.25rem 0 0;   /* top margin only, small and controlled */
+}
