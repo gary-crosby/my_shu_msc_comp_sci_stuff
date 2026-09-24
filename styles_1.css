@@ -27,5 +27,5 @@ a:active {
 }
 
 li {
-  margin-bottom: 0.5 em  /* add space after each li to improve readability */
+  margin-bottom: 1.0 em  /* add space after each li to improve readability */
 }
