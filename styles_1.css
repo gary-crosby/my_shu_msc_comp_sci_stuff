@@ -6,9 +6,12 @@ h1 {
   font-size: 140%;
 }
 
+a {
+  text-decoration: underline;
+}
+
 a:link {
   color: #3498db;
-  text-decoration: none; /* Removes the default underline */
 }
 
 a:visited {
@@ -17,7 +20,6 @@ a:visited {
 
 a:hover {
   color: #2980b9;
-  text-decoration: underline; /* Adds the underline back on hover */
 }
 
 a:active {
