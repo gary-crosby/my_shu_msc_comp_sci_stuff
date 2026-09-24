@@ -26,6 +26,6 @@ a:active {
   text-decoration: underline;
 }
 
-li {
-  margin-bottom: 1.0 em  /* add space after each li to improve readability */
+li:not(:last-child) {
+  margin-bottom: 1.00rem;
 }
