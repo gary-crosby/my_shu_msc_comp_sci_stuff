@@ -25,3 +25,7 @@ a:active {
   color: #FF0000;              /* standard active red */
   text-decoration: underline;
 }
+
+li {
+  margin-bottom: 0.5 em  /* add space after each li to improve readability */
+}
