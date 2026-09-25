@@ -1,4 +1,4 @@
-# Sheffield Hallam University | MSc Computer Science | Web Technologies | Miscellaneous Files
+# SHU | MSc Computer Science | Web Technologies | Misc Files
 
 There's nothing exciting here.
 
