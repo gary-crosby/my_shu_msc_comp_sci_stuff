@@ -15,34 +15,43 @@ earth_mass_kg = 0;
 
 // 0. Create planet class
 class Planet {
-  constructor(name, mass_kg, type, orbit_km, orbit_yr, moons_perm=null, moons_prov=null, mass_earth=0, orbit_au=0) {
-    this.name = name;   
+  constructor(
+    name,
+    mass_kg,
+    type,
+    orbit_km,
+    orbit_yr,
+    moons_perm = null,
+    moons_prov = null,
+    mass_earth = null,
+    orbit_au = null,
+  ) {
+    this.name = name;
     this.mass_kg = mass_kg; // in kg
     this.type = type;
     this.orbit_km = orbit_km; // in km
     this.orbit_yr = orbit_yr; // in years
-    this.moons_perm = moons_perm; // TODO: Populate this later if moons_perm>0
-    this.moons_prov = moons_prov; // TODO: Populate this later if moons_prov >0
-    this.mass_earth = mass_earth;
-    this.orbit_au = round((float(orbit_km/149597870.7)), 2) // Orbit in AU (Astronomical Units)
+    this.moons_perm = moons_perm; // TODO: Populate this later if moons_perm > 0
+    this.moons_prov = moons_prov; // TODO: Populate this later if moons_prov > 0
+    this.mass_earth = mass_earth; 
+    this.orbit_au = (orbit_km / 149597870.7).toFixed(2); // Convert km to AU rounded to 2 decimal places
   }
 }
 
 // 1.1 Read JSON file
-fetch('solar_system_data.json')
-  .then(response => {
+fetch("solar_system_data.json")
+  .then((response) => {
     if (!response.ok) {
       throw new Error(`Could not load planets.json: ${response.status}`);
     }
     return response.json();
   })
-  .then(data => {
-    console.log(data); // Inspect the JSON in the browser console
-
-    planets = data;
+  .then((data) => {
+    planet_data = data;
+    console.log(planet_data); // Inspect the JSON in the browser console
   })
-  .catch(error => {
-    console.error('Error loading planet data:', error);
+  .catch((error) => {
+    console.error("Error loading planet data:", error);
   });
 
-  // 1.2 Parse JSON data and store global variables and objects
+// 1.2 Parse JSON data and store in global array that holds Planet objects
