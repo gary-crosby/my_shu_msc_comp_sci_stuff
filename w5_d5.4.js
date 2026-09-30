@@ -13,7 +13,7 @@ planets = [];
 earth_mass_kg = 0;
 
 // Read JSON file
-fetch('planets.json')
+fetch('solar_system_data.json')
   .then(response => {
     if (!response.ok) {
       throw new Error(`Could not load planets.json: ${response.status}`);
