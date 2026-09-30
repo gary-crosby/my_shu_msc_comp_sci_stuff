@@ -1,11 +1,46 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Solar System Explorer</title>
-</head>
-<body>
- <script src="w5_d5.4.js" defer></script> 
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Solar System Explorer</title>
+  </head>
+  <body>
+    <script src="w5_d5.4.js" defer></script>
+    <div id="planet-info">
+      <p>Welcome to the Solar System Explorer! This application allows you to explore various planets in our solar system and view their characteristics. You can select one or more planets and choose which characteristics you want to see.</p>
+    </div>
+    <div id="planet-list">
+      <!-- Dynamically add Planet checkboxes to the DOM from JSON data -->
+    </div>
+    <div id="planet-details">
+      <p>Planet(s): <span id="selected-planets"></span></p>
+      <p>Characteristics:</p>
+      <label>
+        <input type="checkbox" name="details" value="mass" />
+        Mass (kg)
+      </label>
+      <label>
+        <input type="checkbox" name="details" value="type" />
+        Type
+      </label>
+      <label>
+        <input type="checkbox" name="details" value="orbit_au" />
+        Orbit (AU)
+      </label>
+      <label>
+        <input type="checkbox" name="details" value="orbit_yr" />
+        Orbit (years)
+      </label>
+      <label>
+        <input type="checkbox" name="details" value="moons" />
+        Moons
+      </label>
+    </div>
+    <div id="selected-details">
+      <!-- Dynamically display user selected details here -->
+       <p>Your selected planet(s) and their selected characteristic(s):</p>
+      <input type="textarea" id="details-output" rows="10" cols="50" readonly />
+    </div>
+  </body>
 </html>
