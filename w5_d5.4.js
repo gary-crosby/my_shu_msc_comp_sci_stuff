@@ -17,24 +17,24 @@ earth_mass_kg = 0;
 class Planet {
   constructor(
     name,
-    mass_kg,
     type,
     orbit_km,
     orbit_yr,
+    mass_kg,
     moons_perm = null,
     moons_prov = null,
     mass_earth = null,
     orbit_au = null,
   ) {
     this.name = name;
+    this.type = type; // e.g., "Terrestrial", "Gas Giant", "Ice Giant", "Dwarf Planet"
     this.mass_kg = mass_kg; // in kg
-    this.type = type;
     this.orbit_km = orbit_km; // in km
     this.orbit_yr = orbit_yr; // in years
+    this.orbit_au = (orbit_km / 149597870.7).toFixed(2); // Convert km to AU rounded to 2 decimal places
     this.moons_perm = moons_perm; // TODO: Populate this later if moons_perm > 0
     this.moons_prov = moons_prov; // TODO: Populate this later if moons_prov > 0
-    this.mass_earth = mass_earth; 
-    this.orbit_au = (orbit_km / 149597870.7).toFixed(2); // Convert km to AU rounded to 2 decimal places
+    this.mass_earth = mass_earth; // TODO: Calculate this later
   }
 }
 
