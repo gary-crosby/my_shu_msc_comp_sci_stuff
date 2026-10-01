@@ -10,48 +10,85 @@ TODO:
  */
 
 // Setup some globals
-planets = [];
-earth_mass_kg = 0;
+const dataFile = "solar_system_data.json";
+let planetData = null;
+const planets = [];
+let earthMassKg = null; // Will be set after loading planet data
 
-// 0. Create planet class
+// Define the Planet class
 class Planet {
   constructor(
     name,
     type,
-    orbit_km,
-    orbit_yr,
-    mass_kg,
-    moons_perm = null,
-    moons_prov = null,
-    mass_earth = null,
-    orbit_au = null,
+    orbitKm,
+    orbitYr,
+    massKg,
+    moonsPerm = "None",
+    moonsProv = "None"
   ) {
     this.name = name;
     this.type = type; // e.g., "Terrestrial", "Gas Giant", "Ice Giant", "Dwarf Planet"
-    this.mass_kg = mass_kg; // in kg
-    this.orbit_km = orbit_km; // in km
-    this.orbit_yr = orbit_yr; // in years
-    this.orbit_au = (orbit_km / 149597870.7).toFixed(2); // Convert km to AU rounded to 2 decimal places
-    this.moons_perm = moons_perm; // TODO: Populate this later if moons_perm > 0
-    this.moons_prov = moons_prov; // TODO: Populate this later if moons_prov > 0
-    this.mass_earth = mass_earth; // TODO: Calculate this later
+    this.massKg = massKg; // in kg
+    this.massEarths = Number(this.massKg / earthMassKg).toFixed(2); 
+    this.orbitYr = Number(orbitYr); // in years
+    this.orbitKm = Number(orbitKm); // in km
+    this.orbitAu = Number((orbitKm / 149597870.7).toFixed(2)); // Convert km to AU rounded to 2 decimal places
+    this.moonsPerm = moonsPerm; // TODO: Populate this later if moonsPerm > 0
+    this.moonsProv = moonsProv; // TODO: Populate this later if moonsProv > 0
   }
 }
 
-// 1.1 Read JSON file
-fetch("solar_system_data.json")
-  .then((response) => {
+// Read JSON file into a JSON object
+async function loadPlanetData() {
+  try {
+    const response = await fetch(dataFile); 
     if (!response.ok) {
-      throw new Error(`Could not load planets.json: ${response.status}`);
+      throw new Error(`Could not load ${dataFile}: ${response.status}`);
     }
     return response.json();
-  })
-  .then((data) => {
-    planet_data = data;
-    console.log(planet_data); // Inspect the JSON in the browser console
-  })
-  .catch((error) => {
+  } catch (error) {
     console.error("Error loading planet data:", error);
-  });
+  }
+}
+
+// Function to process ploanet data and create Planet objects
+function processPlanetData(data) {
+  if (!data || !data.planets) {
+    console.error("Invalid data format:", data);
+    return;
+  } 
+  else {
+    // Find Earth mass in kg from the data
+    const earthData = data.planets.find((planet) => planet.name.toLowerCase() === "earth"); 
+    if (earthData) {
+      earthMassKg = earthData.mass_kg;
+    }
+
+    // Create Planet objects for each planet in the data
+    data.planets.forEach((planetData) => {
+      const planet = new Planet(
+        planetData.name,
+        planetData.type,
+        planetData.distance_from_sun_km,
+        planetData.orb_yr,
+        planetData.mass_kg,
+        planetData.moons.permanently_named,
+        planetData.moons.moons_prov
+      );
+      planets.push(planet);
+      console.log(`Created Planet object for ${planet.name}:`, planet); 
+    });
+  }
+}
+
+// Call the function to load planet data and then process it
+loadPlanetData().then((data) => {
+  planetData = data;
+  console.log("Planet data loaded:", planetData);
+  processPlanetData(planetData);
+});
+
+
+
 
 // 1.2 Parse JSON data and store in global array that holds Planet objects
