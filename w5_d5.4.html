@@ -1,12 +1,16 @@
 <!doctype html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Solar System Explorer</title>
   </head>
+
   <body>
+
     <script src="w5_d5.4.js" defer></script>
+
     <div id="planet-info">
       <h1>Welcome to Solar System Explorer</h1>
       <p>
@@ -15,10 +19,12 @@
         and select which characteristics you want to see.
       </p>
     </div>
+
     <div id="planet-list">
       <!-- Dynamically add Planet checkboxes to the DOM from JSON data -->
-       <p>Planet(s): </p>
+      <p>Planet(s):</p>
     </div>
+
     <div id="planet-details">
       <p>Characteristics:</p>
       <label>
@@ -42,11 +48,21 @@
         Moons
       </label>
     </div>
+
     <div id="selected-details">
       <!-- Dynamically display user selected details here -->
       <p>Your selected planet(s) and their selected characteristic(s):</p>
       <input type="textarea" id="data-output" rows="10" cols="50" readonly />
     </div>
-    <div id="clear"><input type="button" value="Clear Selections" onclick="clearSelections()" /></div>
+
+    <div id="clear">
+      <input
+        type="button"
+        value="Clear Selections"
+        onclick="clearSelections()"
+      />
+    </div>
+    
   </body>
+
 </html>
