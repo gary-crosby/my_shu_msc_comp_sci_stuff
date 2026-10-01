@@ -116,14 +116,17 @@ document.addEventListener("change", (event) => {
 // Update the data window based on selected planets and characteristics
 function updateDataWindow() {
   console.log("Updating data window based on user selections...");
-  document.getElementById("data-output").value = "Updating data window based on user selections...";
+  const textarea = document.getElementById("data-output");
+  textarea.value = "Please wait while we update this window based on your selections...";
+  // TODO: Implement logic to gather selected planets and characteristics, then update the textarea with relevant information
 }
 
 // Clear selections and reset the data window
 function clearSelections() {
-  console.log("resetting data window and clearing selections...");
+  console.log("Resetting data window and clearing selections...");
   // Reset the data window to its initial state
-  document.getElementById("data-output").value = "Select planet(s) and characteristics to display...";
+  const textarea = document.getElementById("data-output");
+  textarea.value = "No planets or characteristics are selected. Please make your selections.";
   // Clear all checkboxes ...
   const checkboxes = document.querySelectorAll('input[type="checkbox"]');
   checkboxes.forEach((checkbox) => {
