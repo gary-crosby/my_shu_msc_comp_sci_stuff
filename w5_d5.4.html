@@ -14,19 +14,17 @@
     <div id="planet-info">
       <h1>Welcome to Solar System Explorer</h1>
       <p>
-        This application allows you to explore various planets in our solar
-        system and view their characteristics. Please select one or more planets
-        and select which characteristics you want to see.
+        This application allows you to learn about the amazing planets in our solar system.
       </p>
     </div>
 
     <div id="planet-list">
-      <!-- Dynamically add Planet checkboxes to the DOM from JSON data -->
-      <p>Planet(s):</p>
+      <!-- Dynamically add planet checkboxes to the DOM from JSON data -->
+      <p>Select at least one planet</p>
     </div>
 
     <div id="planet-details">
-      <p>Characteristics:</p>
+      <p>Select at least one characteristic:</p>
       <label>
         <input type="checkbox" name="details" value="type" />
         Type
@@ -51,8 +49,8 @@
 
     <div id="selected-details">
       <!-- Dynamically display user selected details here -->
-      <p>Your selected planet(s) and their selected characteristic(s):</p>
-      <textarea id="data-output" rows="10" cols="80" readonly>No planets or characteristics are selected. Please make your selections.</textarea>
+      <p>The data you selected:</p>
+      <textarea id="data-output" rows="10" cols="80" readonly>Please select at least one planet and one characteristic to see the data.</textarea>
     </div>
 
     <div id="clear">

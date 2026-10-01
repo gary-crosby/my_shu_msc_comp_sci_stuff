@@ -126,7 +126,7 @@ function clearSelections() {
   console.log("Resetting data window and clearing selections...");
   // Reset the data window to its initial state
   const textarea = document.getElementById("data-output");
-  textarea.value = "No planets or characteristics are selected. Please make your selections.";
+  textarea.value = "Please select at least one planet and one characteristic to see the data.";
   // Clear all checkboxes ...
   const checkboxes = document.querySelectorAll('input[type="checkbox"]');
   checkboxes.forEach((checkbox) => {
