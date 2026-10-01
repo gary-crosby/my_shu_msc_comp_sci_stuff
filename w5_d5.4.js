@@ -97,7 +97,7 @@ function buildPlanetCheckboxes() {
   });
 }
 
-// Call the function to load planet data, then process it, and build planet checkboxes
+// Call the function to load planet data, process it, and build planet checkboxes
 loadPlanetData().then((data) => {
   planetData = data;
   console.log("Planet data loaded:", planetData);
