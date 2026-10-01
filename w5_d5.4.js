@@ -12,7 +12,7 @@ TODO:
 const dataFile = "solar_system_data.json";
 let planetData = null;
 const planets = [];
-let earthMassKg = null; // Will be set after loading planet data
+let earthMassKg = null; // Will be set when loading planet data
 
 // Define the Planet class
 class Planet {
@@ -115,11 +115,19 @@ document.addEventListener("change", (event) => {
 
 // Update the data window based on selected planets and characteristics
 function updateDataWindow() {
-  console.log("Updating data window based on user selections...");  
-} 
+  console.log("Updating data window based on user selections...");
+  document.getElementById("data-output").value = "Updating data window based on user selections...";
+}
 
 // Clear selections and reset the data window
 function clearSelections() {
-  console.log("Clearing selections and resetting data window...");  
+  console.log("resetting data window and clearing selections...");
+  // Reset the data window to its initial state
+  document.getElementById("data-output").value = "Select planet(s) and characteristics to display...";
   // Clear all checkboxes ...
+  const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+  checkboxes.forEach((checkbox) => {
+    checkbox.checked = false;
+  }); 
+  console.log("Window reset and all selections cleared.");
 }
