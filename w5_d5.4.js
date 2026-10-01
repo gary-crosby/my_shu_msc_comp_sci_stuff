@@ -117,20 +117,56 @@ document.addEventListener("change", (event) => {
 function updateDataWindow() {
   console.log("Updating data window based on user selections...");
   const textarea = document.getElementById("data-output");
-  textarea.value = "Please wait while we update this window based on your selections...";
-  // TODO: Implement logic to gather selected planets and characteristics, then update the textarea with relevant information
-}
+  textarea.value =
+    "Please wait while we update this window based on your selections...";
+  // Check which planets are selected
+  const selectedPlanets = Array.from(
+    document.querySelectorAll('input[name="planet"]:checked'),
+  ).map((checkbox) => checkbox.value);
+  // Check which characteristics are selected
+  const selectedCharacteristics = Array.from(
+    document.querySelectorAll('input[name="details"]:checked'),
+  ).map((checkbox) => checkbox.value);
+  // Log the selected planets and characteristics for debugging
+  console.log("Selected planets:", selectedPlanets);
+  console.log("Selected characteristics:", selectedCharacteristics);  
+  // Update display based on whether planet(s0 and/or characteristics) are selected
+  // No planets and no characteristics selected
+  if (selectedPlanets.length === 0 && selectedCharacteristics.length === 0) {
+    clearSelections();
+  }
+  // No planets selected, but characteristics are selected
+  else if (selectedPlanets.length === 0) {
+    textarea.value = "Please select at least one planet to see the data.";
+  }
+  // No characteristics selected, but planets are selected
+  else if (selectedCharacteristics.length === 0) {
+    textarea.value =
+      "Please select at least one characteristic to see the data.";
+  } else {
+    // Both planets and characteristics are selected, display the data
+    let output = "";
+    selectedPlanets.forEach((planet) => {
+      output += `Planet: ${planet}\n`;
+    });
+    selectedCharacteristics.forEach((characteristic) => {
+      output += `Characteristic: ${characteristic}\n`;
+    });
+    textarea.value = output;
+  }
 
-// Clear selections and reset the data window
-function clearSelections() {
-  console.log("Resetting data window and clearing selections...");
-  // Reset the data window to its initial state
-  const textarea = document.getElementById("data-output");
-  textarea.value = "Please select at least one planet and one characteristic to see the data.";
-  // Clear all checkboxes ...
-  const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-  checkboxes.forEach((checkbox) => {
-    checkbox.checked = false;
-  }); 
-  console.log("Window reset and all selections cleared.");
+  // Clear selections and reset the data window
+  function clearSelections() {
+    console.log("Resetting data window and clearing selections...");
+    // Reset the data window to its initial state
+    const textarea = document.getElementById("data-output");
+    textarea.value =
+      "Please select at least one planet and one characteristic to see the data.";
+    // Clear all checkboxes ...
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    checkboxes.forEach((checkbox) => {
+      checkbox.checked = false;
+    });
+    console.log("Window reset and all selections cleared.");
+  }
 }
