@@ -81,7 +81,7 @@ function processPlanetData(data) {
   }
 }
 
-// Dynamically buld checkboxes for planets
+// Dynamically build checkboxes for planets and add to DOM
 function buildPlanetCheckboxes() {
   const planetCheckboxContainer = document.getElementById("planet-list");
   planets.forEach((planet) => {
@@ -97,7 +97,7 @@ function buildPlanetCheckboxes() {
   });
 }
 
-// Call the function to load planet data, process it, and build planet checkboxes
+// Call the function to load planet data, process it, and dynamically add planet checkboxes
 loadPlanetData().then((data) => {
   planetData = data;
   console.log("Planet data loaded:", planetData);
