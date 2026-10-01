@@ -89,6 +89,7 @@ function buildPlanetCheckboxes() {
     checkbox.type = "checkbox";
     checkbox.id = `planet_${planet.name}`;
     checkbox.value = planet.name;
+    checkbox.name = "planet"; // Group checkboxes by name for easier selection later
     const label = document.createElement("label");
     label.htmlFor = `planet_${planet.name}`;
     label.textContent = planet.name;
@@ -104,3 +105,21 @@ loadPlanetData().then((data) => {
   processPlanetData(planetData);
   buildPlanetCheckboxes();
 });
+
+// Add event listeners to checkboxes to update the data window on selection change
+document.addEventListener("change", (event) => {
+  if (event.target.name === "details" || event.target.name === "planet") {
+    updateDataWindow();
+  }
+});
+
+// Update the data window based on selected planets and characteristics
+function updateDataWindow() {
+  console.log("Updating data window based on user selections...");  
+} 
+
+// Clear selections and reset the data window
+function clearSelections() {
+  console.log("Clearing selections and resetting data window...");  
+  // Clear all checkboxes ...
+}
