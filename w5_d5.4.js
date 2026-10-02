@@ -147,7 +147,7 @@ function updateDataWindow() {
       if (planet) {
         output += formatPlanetData(planet, selectedCharacteristics);
         if (selectedPlanets.length > 1) {
-          output += "\n"; // Add a blank line between planets if >1 are selected
+          //output += "\n"; // Add a blank line between planets if >1 are selected
         }
       }
     });
