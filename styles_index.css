@@ -1,0 +1,56 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    background-color: #000; /* fallback if image fails to load */
+    background-image: url("farm_rainbow_2560x1440px.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.7);
+  min-height: 100vh;
+}
+
+h1 { 
+  font-size: 140%;
+}
+
+a {
+  color: #0000EE;              /* standard link blue */
+  text-decoration: underline;  /* always underlined */
+}
+
+a:visited {
+  color: #551A8B;              /* standard visited purple */
+}
+
+a:hover,
+a:focus {
+  color: #0000EE;              /* keep standard blue on hover/focus */
+  text-decoration: underline;  /* no change, stays underlined */
+}
+
+a:active {
+  color: #FF0000;              /* standard active red */
+  text-decoration: underline;
+}
+
+li:not(:last-child) {
+  margin-bottom: 1.00rem;
+}
+
+li p {
+  margin: 0.25rem 0 0;   /* top margin only, small and controlled */
+}
+
+p {
+  font-size: 1.1rem
+}
