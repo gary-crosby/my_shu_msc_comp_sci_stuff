@@ -117,7 +117,7 @@ function updateDataWindow() {
   console.log("Updating data window based on user selections...");
   const textarea = document.getElementById("data-output");
   textarea.value =
-    "Please wait while we update this window based on your selections...";
+    "Please wait while we update this window based on your selection...";
   // Check which planets are selected
   const selectedPlanets = Array.from(
     document.querySelectorAll('input[name="planet"]:checked'),
@@ -137,12 +137,12 @@ function updateDataWindow() {
   }
   // No planets selected, but characteristics are selected
   else if (selectedPlanets.length === 0) {
-    textarea.value = "Please select at least one planet to see the data.";
+    textarea.value = "Please select at least one planet.";
   }
   // No characteristics selected, but planets are selected
   else if (selectedCharacteristics.length === 0) {
     textarea.value =
-      "Please select at least one characteristic to see the data.";
+      "Please select at least one characteristic.";
   } else {
     // Both planets and characteristics are selected, so display the data
     let output = "";
@@ -166,7 +166,7 @@ function clearSelections() {
   // Reset the data window to its initial state
   const textarea = document.getElementById("data-output");
   textarea.value =
-    "Please select at least one planet and one characteristic to see the data.";
+    "Please select at least one planet and one characteristic.";
   // Clear all checkboxes ...
   const checkboxes = document.querySelectorAll('input[type="checkbox"]');
   checkboxes.forEach((checkbox) => {
