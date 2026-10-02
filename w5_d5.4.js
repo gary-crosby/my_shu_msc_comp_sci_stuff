@@ -176,8 +176,8 @@ function formatPlanetData(planet, characteristics) {
   // Accepts a Planet object and an array of selected characteristics
   console.log(`Formatting data for planet: ${planet.name}`);
   console.log(`Selected characteristics: ${characteristics}`);
-  let output = `Planet: ${planet.name}\n`;
-  const asterisks = "*".repeat(8 + planet.name.length);
+  let output = `${planet.name}\n`;
+  const asterisks = "*".repeat(planet.name.length);
   output += asterisks + "\n";
   console.log(`Planet data:`, planet);
   characteristics.forEach((characteristic) => {
