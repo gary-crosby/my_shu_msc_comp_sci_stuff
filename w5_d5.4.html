@@ -9,60 +9,61 @@
 
   <body>
     <div id="page-content">
-      <script src="w5_d5.4.js" defer></script>
-    </div>
+      <div id="planet-info">
+        <h1>Welcome to Solar System Explorer</h1>
+        <p>
+          This application allows you to learn about the amazing planets in our
+          solar system.
+        </p>
+      </div>
 
-    <div id="planet-info">
-      <h1>Welcome to Solar System Explorer</h1>
-      <p>
-        This application allows you to learn about the amazing planets in our
-        solar system.
-      </p>
-    </div>
+      <div id="planet-list">
+        <!-- Dynamically add planet checkboxes to the DOM from JSON data -->
+        <p><strong>Step 1. Select at least one planet:</strong></p>
+      </div>
 
-    <div id="planet-list">
-      <!-- Dynamically add planet checkboxes to the DOM from JSON data -->
-      <p><strong>Step 1. Select at least one planet:</strong></p>
-    </div>
+      <div id="planet-details">
+        <p><strong>Step 2. Select at least one characteristic:</strong></p>
+        <label>
+          <input type="checkbox" name="details" value="type" />
+          Type
+        </label>
+        <label>
+          <input type="checkbox" name="details" value="massEarths" />
+          Mass (Earth masses)
+        </label>
+        <label>
+          <input type="checkbox" name="details" value="orbitYr" />
+          Orbital period (Earth years)
+        </label>
+        <label>
+          <input type="checkbox" name="details" value="orbitAu" />
+          Orbital distance from Sun (au)
+        </label>
+        <label>
+          <input type="checkbox" name="details" value="moons" />
+          Moons
+        </label>
+      </div>
 
-    <div id="planet-details">
-      <p><strong>Step 2. Select at least one characteristic:</strong></p>
-      <label>
-        <input type="checkbox" name="details" value="type" />
-        Type
-      </label>
-      <label>
-        <input type="checkbox" name="details" value="massEarths" />
-        Mass (Earth masses)
-      </label>
-      <label>
-        <input type="checkbox" name="details" value="orbitYr" />
-        Orbital period (Earth years)
-      </label>
-      <label>
-        <input type="checkbox" name="details" value="orbitAu" />
-        Orbital distance from Sun (au)
-      </label>
-      <label>
-        <input type="checkbox" name="details" value="moons" />
-        Moons
-      </label>
-    </div>
-
-    <div id="selected-details">
-      <!-- Dynamically display user selected details here -->
-      <p>The data you selected:</p>
-      <textarea id="data-output" rows="10" cols="80" readonly>
+      <div id="selected-details">
+        <!-- Dynamically display user selected details here -->
+        <p><strong>The data you selected:</strong></p>
+        <textarea id="data-output" rows="10" cols="80" readonly>
 Please select at least one planet and one characteristic to see the data.</textarea
-      >
-    </div>
+        >
+      </div>
 
-    <div id="clear">
-      <input
-        type="button"
-        value="Clear Selections"
-        onclick="clearSelections()"
-      />
+      <div id="clear">
+        <input
+          type="button"
+          value="Clear Selections"
+          onclick="clearSelections()"
+        />
+      </div>
+
+      <script src="w5_d5.4.js" defer></script>
+
     </div>
   </body>
 </html>
