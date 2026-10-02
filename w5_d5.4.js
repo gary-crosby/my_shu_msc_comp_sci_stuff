@@ -177,7 +177,7 @@ function formatPlanetData(planet, characteristics) {
   console.log(`Formatting data for planet: ${planet.name}`);
   console.log(`Selected characteristics: ${characteristics}`);
   let output = `${planet.name}\n`;
-  const asterisks = "*".repeat(planet.name.length);
+  const asterisks = "—".repeat(planet.name.length);
   output += asterisks + "\n";
   console.log(`Planet data:`, planet);
   characteristics.forEach((characteristic) => {
