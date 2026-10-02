@@ -196,7 +196,7 @@ function formatPlanetData(planet, characteristics) {
         output += `Orbital period (years): ${planet.orbitYr}\n`;
         break;
       case "orbitAu":
-        output += `Orbital distance from Sun (AU): ${planet.orbitAu}\n`;
+        output += `Orbital distance from Sun (au): ${planet.orbitAu}\n`;
         break;
       case "moons":
         if (planet.moonsPerm !== "None") {
