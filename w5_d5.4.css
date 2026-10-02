@@ -1,5 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo+2&family=Orbitron:wght@600&family=Space+Mono&display=swap");
+
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Orbitron", Arial, Helvetica, sans-serif;
+    margin: 0;
+    background-color: #000; /* fallback if image fails to load */
+    background-image: url("solar_system.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+#page-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem;
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.80);
+  min-height: 100vh;
 }
 
 #planet-list label,
@@ -21,7 +39,14 @@ body {
     height: 20vh;
     min-height: 150px;
     resize: vertical;
-    font-family: "Consolas", "Lucida Console", "Courier New", monospace;
+    font-family: "Space Mono", "Consolas", "Lucida Console", "Courier New", monospace;
+    font-size: 1.0rem;
+        background-color: rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(0, 0, 0, 0.95);
+}
+
+#clear input[type="button"] {
+    font-family: "Orbitron", Arial, Helvetica, sans-serif;
     font-size: 1rem;
 }
 
@@ -29,6 +54,11 @@ body {
     width: 100%;
     max-width: 800px;
 }
+
 #clear {
-    margin-top: 1em;
+    margin-top: 1.5em;
+}
+
+p {
+    margin-top: 1.5em;
 }
