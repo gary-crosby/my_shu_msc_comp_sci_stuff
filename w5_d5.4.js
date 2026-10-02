@@ -28,11 +28,11 @@ class Planet {
     this.orbitAu = (orbitKm / 149597870.7).toFixed(2); // Convert km to AU rounded to 2 decimal places
     this.moonsPerm = moonsPerm;
     if (moonsPerm.length === 0) {
-      this.moonsPerm = "None";
+      this.moonsPerm = "none";
     }
     this.moonsProv = moonsProv;
     if (moonsProv === 0) {
-      this.moonsProv = "None";
+      this.moonsProv = "none";
     }
   }
 }
@@ -147,7 +147,7 @@ function updateDataWindow() {
       if (planet) {
         output += formatPlanetData(planet, selectedCharacteristics);
         if (selectedPlanets.length > 1) {
-          //output += "\n"; // Add a blank line between planets if >1 are selected
+          output += "\n"; // Add a blank line between planets if >1 are selected
         }
       }
     });
@@ -186,22 +186,22 @@ function formatPlanetData(planet, characteristics) {
         output += `Type: ${planet.type}\n`;
         break;
       case "massEarths":
-        output += `Mass (Earth masses): ${planet.massEarths}\n`;
+        output += `Mass: ${planet.massEarths}  (Earth masses)\n`;
         break;
       case "orbitYr":
-        output += `Orbital period (years): ${planet.orbitYr}\n`;
+        output += `Orbital period: ${planet.orbitYr} (Earth years)\n`;
         break;
       case "orbitAu":
-        output += `Orbital distance from Sun (au): ${planet.orbitAu}\n`;
+        output += `Orbital distance from Sun: ${planet.orbitAu} (au)\n`;
         break;
       case "moons":
-        if (planet.moonsPerm !== "None") {
+        if (planet.moonsPerm !== "none") {
           const moonList = planet.moonsPerm.join(", ");
-          output += `Moons (permanently named): ${moonList}\n`;
+          output += `Named moons: ${planet.moonsPerm.length} comprising ${moonList}\n`;
         } else {
-          output += `Moons (permanently named): ${planet.moonsPerm}\n`;
+          output += `Provisional moons: ${planet.moonsProv}\n`;
         }
-        output += `Moons (provisional): ${planet.moonsProv}\n`;
+        output += `Provisional moons: ${planet.moonsProv}\n`;
         break;
       default:
         console.log(`Unknown characteristic: ${characteristic}`);
