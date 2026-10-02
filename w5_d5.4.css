@@ -41,7 +41,7 @@ body {
     resize: vertical;
     font-family: "Space Mono", "Consolas", "Lucida Console", "Courier New", monospace;
     font-size: 1.0rem;
-    background-color: rgba(255, 255, 255, 0.4);
+    background-color: rgba(255, 255, 255, 0.5);
     border: 1px solid rgba(0, 0, 0, 0.95);
 }
 
@@ -59,11 +59,12 @@ input[type="checkbox"], input[type="button"], details summary {
     max-width: 800px;
 }
 
-#clear, details, summary p, p{
+#clear, details,  p{
     margin-top: 2rem;
 }
 
 details p, details a {
+    margin-top: 1rem;
     font-size: 0.85rem;
     color: rgba(0, 0, 0, 0.8);
 }
