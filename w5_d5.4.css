@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Exo+2&family=Orbitron:wght@600&family=Space+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Space+Mono&display=swap");
 
 body {
     font-family: "Orbitron", Arial, Helvetica, sans-serif;
@@ -55,10 +55,9 @@ input[type="checkbox"], input[type="button"], details summary {
 
 #selected-details {
     width: 100%;
-    max-width: 800px;
 }
 
-#clear, details,  p{
+#clear, details, p {
     margin-top: 2rem;
 }
 
