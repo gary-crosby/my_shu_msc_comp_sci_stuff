@@ -24,19 +24,19 @@ body {
 #planet-details label {
     display: flex;
     align-items: center;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.5rem;
 }
 
 #planet-list input[type="checkbox"],
 #planet-details input[type="checkbox"] {
-    margin-right: 0.5em;
+    margin-right: 0.5rem;
 }
 
 #data-output {
     width: 100%;
     max-width: 800px;
     box-sizing: border-box;
-    height: 20vh;
+    height: 25vh;
     min-height: 150px;
     resize: vertical;
     font-family: "Space Mono", "Consolas", "Lucida Console", "Courier New", monospace;
@@ -54,16 +54,16 @@ input[type="checkbox"], input[type="button"], details summary {
     font-size: 1rem;
 }
 
-
 #selected-details {
     width: 100%;
     max-width: 800px;
 }
 
-#clear, details, p{
-    margin-top: 1.5em;
+#clear, details, summary p, p{
+    margin-top: 2rem;
 }
 
-details p {
+details p, details a {
     font-size: 0.85rem;
+    color: rgba(0, 0, 0, 0.8);
 }
