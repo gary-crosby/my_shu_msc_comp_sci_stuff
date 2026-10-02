@@ -27,7 +27,7 @@ details {
 }
 
 summary {
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   margin: 0.5rem;
   padding: 0.5rem;
   font-weight: bold;
@@ -57,10 +57,6 @@ h1 {
   font-size: 1.5rem;
 }
 
-h2 {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-}
 
 p {
   font-size: 1.1rem
