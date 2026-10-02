@@ -2,25 +2,68 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     background-color: #000; /* fallback if image fails to load */
-    background-image: url("farm_rainbow_2560x1440px.jpg");
+    background-image: url("waterton_2018_2560x1440px.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
 
-
 main {
   max-width: 800px;
   margin: 0 auto;
   padding: 2rem;
   box-sizing: border-box;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.45);
   min-height: 100vh;
 }
 
+details {
+  margin-bottom: 1rem;
+  border: 1px solid #180101;
+  border-radius: 4px;
+  padding:  0.5rem 0.5rem 0rem 0.5rem; ;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+summary {
+  font-size: 1.3rem;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  font-weight: bold;
+}
+
+.my-accordion {
+  background-color: #f1f1f1;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.content{
+  padding: 0rem 0rem 1rem 1rem;
+  border-radius: 8px;
+  margin: 0rem 1rem 0rem 1rem;
+
+}
+
+.discussion  {
+  margin-bottom: 0.5rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
 h1 { 
-  font-size: 140%;
+  font-size: 1.65rem;
+}
+
+h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  font-size: 1.1rem
 }
 
 a {
@@ -43,14 +86,14 @@ a:active {
   text-decoration: underline;
 }
 
-li:not(:last-child) {
-  margin-bottom: 1.00rem;
+.content{
+  
+  padding: 0rem 0rem 1rem 1rem;
+  border-radius: 8px;
+  margin: 0.0rem 0.5rem 1rem 1rem;
+
 }
 
-li p {
-  margin: 0.25rem 0 0;   /* top margin only, small and controlled */
-}
-
-p {
-  font-size: 1.1rem
+.content p:last-of-type {
+  margin-bottom: 0;
 }

@@ -8,132 +8,168 @@
   </head>
   <body>
     <main>
-      <h1>
-      Gary Crosby's SHU <em>Web Technologies</em> module website
-      </h1>
+      <h1>Gary Crosby's SHU <em>Web Technologies</em> module website</h1>
       <p>
-        The links below point to the individual web apps I created for each
-        week:
+        The links below point to the individual web apps I created for each week
+        of the module. They are organized by week and discussion number.
+        Every links opens in a new tab or window.
       </p>
-      <ul>
-        <li>
-          <a
-            href="hello_world_v1.html"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Week 1: Discussion 1.8</a
-          >
-          <p>A simple "Hello, World" web page</p>
-        </li>
-        <li>
-          <a
-            href="hello_world_v2.html"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Week 2: Discussion 2.4</a
-          >
-          <p>
-            The same as Week 1: Discussion 1.8 but with styling implemented via
-            inline CSS
-          </p>
-        </li>
-        <li>
-          <a
-            href="hello_world_v3.html"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Week 3</a
-          >
-          <p>
-            The same as Week 2: Discussion 2.4 but with styling implemented via
-            external CSS file
-          </p>
-        </li>
-        <li>
-          <p>Week 4: Discussion 4.4</p>
-          <p>
-            I didn't make a project that just uses forms but rather uses forms
-            and the HTML DOM, see
-            <a href="w5_d5.4.html" target="_blank" rel="noopener noreferrer"
-              >Week 5: Discussion 5.4</a
-            >
-          </p>
-        </li>
-        <li>
-          <a
-            href="https://gary-crosby.github.io/p5js-game-demo-asteroid-alert/"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Week 4: Discussion 4.7</a
-          >
-          <p>
-            Adding a little JavaScript to my "Hello World" page felt mundane.
-            So, for funsies, I linked to a simple game (demo) I built using
-            JavaScript:<strong>Asteroid Alert!</strong>. I created this project
-            in early 2026 as an example for the students in the Creative
-            Computing (MULT 217) module that I lead at
-            <a
-              href="https://www.saskpolytech.ca/"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Saskatchewan Polytechnic</a
-            >. Its primary purpose was to give the students an idea of the scope
-            of their module final project. Its secondary purpose was to relieve
-            the general sense of boredom I was experiencing at the time :-) The
-            game isn't a responsive design, it could benefit from improved
-            gameplay, and the JavaScript is a sloppy mix of procedural and OOP
-            styles. But it works well enough for its intended purposes. It's
-            about 900 lines of my JavaScript (plus HTML and CSS), it uses the
-            wonderful open source JavaScript library
-            <a
-              href="https://p5js.org/"
-              target="_blank"
-              rel="noopener noreferrer"
-              >p5.js</a
-            >
-            and a few publicly available media assets. For source code, credits
-            and additional information, see
-            <a
-              href="https://github.com/gary-crosby/p5js-game-demo-asteroid-alert"
-              target="_blank"
-              rel="noopener noreferrer"
-              >p5js-game-demo-asteroid-alert GitHub repo</a
-            >. I hope you enjoy playing it!
-          </p>
-        </li>
-        <li>
-          <a href="w5_d5.4.html" target="_blank" rel="noopener noreferrer"
-            >Week 5: Discussion 5.4</a
-          >
-          <p>
-            For this project, I recreated a web version of the python project,
-            <em>Modelling the Solar System</em>, from way back in my very first
-            module, <em>Fundamentals of Computing</em>. This web app reads from
-            a JSON file data about the planets in our solar solar system. The
-            'Characteristics' checkboxes are hard-coded in HTML but the
-            'Planets' checkboxes are dynamically added to the HTML DOM based on
-            data read from the JSON file. The user selects information using
-            form controls, and the data corresponding to the selection is
-            displayed in a form control. The app works without a mouse (i.e.
-            keyboard only) and it works reasonably well on a touchcreen mobile
-            (i.e., I tested on my Pixel 7). For information about the original
-            python project including data sources, see
-            <a
-              href="https://github.com/gary-crosby/modelling-solar-system"
-              target="_blank"
-              rel="noopener noreferrer"
-              >modelling-solar-system GitHub repo</a
-            >
-          </p>
-        </li>
-        <li>
-          <p>Week 5: Discussion 5.7</p>
-          <p>
-            [Coming less soon!] A web app that uses forms, HTML DOM, and an API.
-            Are you excited or what?
-          </p>
-        </li>
-      </ul>
+
+      <div class="accordion-group">
+        <details name="my-accordion" open>
+          <summary>Week 1</summary>
+          <div class="content">
+            <p class="discussion">Discussion 1.8</p>
+            <p>
+              A simple
+              <a
+                href="hello_world_v1.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Hello, World</a
+              >
+              web page
+            </p>
+          </div>
+        </details>
+
+        <details name="my-accordion">
+          <summary>Week 2</summary>
+          <div class="content">
+            <p class="discussion">Discussion 2.4</p>
+            <p>
+              A simple
+              <a
+                href="hello_world_v2.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Hello, World</a
+              >
+              web page with inline CSS styling
+            </p>
+          </div>
+        </details>
+
+        <details name="my-accordion">
+          <summary>Week 3</summary>
+          <div class="content">
+            <p class="discussion">Discussion 3.4</p>
+            <p>
+              The same as
+              <a
+                href="hello_world_v3.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Week 1: Discussion 1.8 but with styling implemented via
+                external CSS file</a
+              >.
+            </p>
+          </div>
+        </details>
+
+        <details name="my-accordion">
+          <summary>Week 4</summary>
+          <div class="content">
+            <p class="discussion">Discussion 4.4</p>
+            <p>
+              I didn't make a project that just uses forms but rather uses forms
+              and the HTML DOM, see
+              <a href="w5_d5.4.html" target="_blank" rel="noopener noreferrer"
+                >Week 5: Discussion 5.4</a
+              >
+            </p>
+            <p class="discussion">Discussion 4.7</p>
+            <p>
+              Adding a little JavaScript to my "Hello World" page felt mundane.
+            </p>
+            <p>
+              So, for funsies, I linked to a simple game (demo) I built using
+              JavaScript:<strong>Asteroid Alert!</strong>. I created this
+              project in early 2026 as an example for the students in the
+              Creative Computing (MULT 217) module that I lead at
+              <a
+                href="https://www.saskpolytech.ca/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Saskatchewan Polytechnic</a
+              >.
+            </p>
+            <p>
+              Its primary purpose was to give the students an idea of the scope
+              of their module final project. Its secondary purpose was to
+              relieve the general sense of boredom I was experiencing at the
+              time :-) The game isn't a responsive design, it could benefit from
+              improved gameplay, and the JavaScript is a sloppy mix of
+              procedural and OOP styles. But it works well enough for its
+              intended purposes. It's about 900 lines of my JavaScript (plus
+              HTML and CSS), it uses the wonderful open source JavaScript
+              library
+              <a
+                href="https://p5js.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >p5.js</a
+              >
+              and a few publicly available media assets.
+            </p>
+            <p>
+              For source code, credits and additional information, see
+              <a
+                href="https://github.com/gary-crosby/p5js-game-demo-asteroid-alert"
+                target="_blank"
+                rel="noopener noreferrer"
+                >p5js-game-demo-asteroid-alert GitHub repo</a
+              >. I hope you enjoy playing it!
+            </p>
+          </div>
+        </details>
+
+        <details name="my-accordion">
+          <summary>Week 5</summary>
+          <div class="content">
+            <p class="discussion">Discussion 5.4</p>
+            <p>
+              For this project, I recreated a web version of the python project,
+              <em>Modelling the Solar System</em>, from way back in my very
+              first module, <em>Fundamentals of Computing</em>.
+            </p>
+            <p>
+              This web app reads from a JSON file data about the planets in our
+              solar solar system. The 'Characteristics' checkboxes are
+              hard-coded in HTML but the 'Planets' checkboxes are dynamically
+              added to the HTML DOM based on data read from the JSON file. The
+              user selects information using form controls, and the data
+              corresponding to the selection is displayed in a form control.
+            </p>
+            <p>
+              The app works without a mouse (i.e. keyboard only) and it works
+              reasonably well on a touchcreen mobile (i.e., I tested on my Pixel
+              7). For information about the original python project including
+              data sources, see
+              <a
+                href="https://github.com/gary-crosby/modelling-solar-system"
+                target="_blank"
+                rel="noopener noreferrer"
+                >modelling-solar-system GitHub repo</a
+              >
+            </p>
+
+            <p class="discussion">Week 5: Discussion 5.7 - Coming Soon!</p>
+            <p>
+              Coming soon! A web app that uses forms, HTML DOM, and an API. Are
+              you excited or what?
+            </p>
+          </div>
+        </details>
+
+        <details name="my-accordion">
+          <summary>Week 6 ... coming soon</summary>
+          <div class="content">
+            <p class="discussion"></p>
+            <p>These are not the droids you're looking for ... move along!</p>
+          </div>
+        </details>
+      </div>
     </main>
   </body>
 </html>
