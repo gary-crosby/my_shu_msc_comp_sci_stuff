@@ -126,11 +126,7 @@ function updateDataWindow() {
   const selectedCharacteristics = Array.from(
     document.querySelectorAll('input[name="details"]:checked'),
   ).map((checkbox) => checkbox.value);
-  // Log the selected planets and characteristics for debugging
-  //console.log("Selected planets:", selectedPlanets);
-  //console.log("Selected characteristics:", selectedCharacteristics);
   // Update display based on whether planet(s) and/or characteristics are selected
-  //
   // No planets and no characteristics selected
   if (selectedPlanets.length === 0 && selectedCharacteristics.length === 0) {
     clearSelections();
