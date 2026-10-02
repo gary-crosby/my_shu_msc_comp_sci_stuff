@@ -3,9 +3,9 @@
 TODO:
   DONE -- 0. Create planet class
   DONE -- 1. Read and parse JSON for planet and characteristics data
-  2. Build checkboxes for Planets (HTML DOM)
+  DONE --Build checkboxes for Planets (HTML DOM)
   3. Populate data window on every user selection change
-  5. Add Clear Selections button functionality
+  DONE -- Clear Selections button functionality
  */
 
 // Setup some globals
@@ -23,19 +23,22 @@ class Planet {
     orbitYr,
     massKg,
     moonsPerm = "None",
-    moonsProv = "None",
-    massEarths=null,
-    orbitAu=null,
+    moonsProv,
+    massEarths = null,
+    orbitAu = null,
   ) {
     this.name = name;
     this.type = type; // e.g., "Terrestrial", "Gas Giant", "Ice Giant", "Dwarf Planet"
     this.massKg = massKg; // in kg
-    this.massEarths = (this.massKg/earthMassKg).toFixed(4);
+    this.massEarths = (this.massKg / earthMassKg).toFixed(4);
     this.orbitYr = orbitYr; // in years
     this.orbitKm = orbitKm; // in km
     this.orbitAu = (orbitKm / 149597870.7).toFixed(2); // Convert km to AU rounded to 2 decimal places
-    this.moonsPerm = moonsPerm; // TODO: Populate this later if moonsPerm > 0
-    this.moonsProv = moonsProv; // TODO: Populate this later if moonsProv > 0
+    this.moonsPerm = moonsPerm; 
+    this.moonsProv = moonsProv;
+    if (moonsProv === 0) {
+      this.moonsProv = "None"; 
+    }
   }
 }
 
@@ -75,7 +78,7 @@ function processPlanetData(data) {
         planetData.orb_yr,
         planetData.mass_kg,
         planetData.moons.permanently_named,
-        planetData.moons.moons_prov,
+        planetData.moons.provisional_count
       );
       planets.push(planet);
       console.log(`Created Planet object for ${planet.name}:`, planet);
@@ -130,8 +133,8 @@ function updateDataWindow() {
     document.querySelectorAll('input[name="details"]:checked'),
   ).map((checkbox) => checkbox.value);
   // Log the selected planets and characteristics for debugging
-  console.log("Selected planets:", selectedPlanets);
-  console.log("Selected characteristics:", selectedCharacteristics);
+  //console.log("Selected planets:", selectedPlanets);
+  //console.log("Selected characteristics:", selectedCharacteristics);
   // Update display based on whether planet(s) and/or characteristics are selected
   //
   // No planets and no characteristics selected
@@ -147,27 +150,31 @@ function updateDataWindow() {
     textarea.value =
       "Please select at least one characteristic to see the data.";
   } else {
+    let output = "";
     // Both planets and characteristics are selected, display the data
     //
     // Debugging: DIsplay raw selections in the textarea for verification
     //
-    let output = "Raw user selections:\n";
-    selectedPlanets.forEach((planet) => {
-      output += `Planet: ${planet}\n`;
-    });
-    selectedCharacteristics.forEach((characteristic) => {
-      output += `Characteristic: ${characteristic}\n`;
-    });
-    output += "\n";
-
+    // output += "Raw user selections:\n";
+    // selectedPlanets.forEach((planet) => {
+    //   output += `Planet: ${planet}\n`;
+    // });
+    // selectedCharacteristics.forEach((characteristic) => {
+    //   output += `Characteristic: ${characteristic}\n`;
+    // });
+    // output += "\n";
     // Loop through selected planets and characteristics to display the data
     selectedPlanets.forEach((planetName) => {
       const planet = planets.find((p) => p.name === planetName);
       if (planet) {
         output += formatPlanetData(planet, selectedCharacteristics);
+        if (selectedPlanets.length > 1) {
+          output += "\n\n"; // Add a blank line between planets if multiple are selected
+        }
       }
     });
     textarea.value = output;
+    textarea.scrollTop = 0; // Scroll to the top of the textarea after updating
   }
 }
 
@@ -187,25 +194,36 @@ function clearSelections() {
 }
 
 function formatPlanetData(planet, characteristics) {
-  // This function will format the planet data for display in the textarea
+  // This function formats the planet data for display in the textarea
   // Accepts a Planet object and an array of selected characteristics
   console.log(`Formatting data for planet: ${planet.name}`);
   console.log(`Selected characteristics: ${characteristics}`);
   let output = `Planet: ${planet.name}\n`;
+  const asterisks  = "*".repeat(9 + planet.name.length);
+  output += asterisks + "\n";
   console.log(`Planet data:`, planet);
   characteristics.forEach((characteristic) => {
     switch (characteristic) {
       case "type":
         output += `Type: ${planet.type}\n`;
         break;
-      case "size":
-        output += `Size: ${planet.massEarths}\n`;
+      case "massEarths":
+        output += `Mass (Earth masses): ${planet.massEarths}\n`;
         break;
-      case "orbit":
+      case "orbitYr":
         output += `Orbital period (years): ${planet.orbitYr}\n`;
         break;
-      case "distance":
+      case "orbitAu":
         output += `Orbital distance from Sun (AU): ${planet.orbitAu}\n`;
+        break;
+      case "moons":
+        if (planet.moonsPerm !== "None") {
+          const moonList = planet.moonsPerm.join(", ");
+          output += `Moons (permanently named): ${moonList}\n`
+        } else {
+          output += `Moons (permanently named): planet.moonsPerm\n`;
+        }
+        output += `Moons (provisional): ${planet.moonsProv}\n`;
         break;
       default:
         console.log(`Unknown characteristic: ${characteristic}`);
