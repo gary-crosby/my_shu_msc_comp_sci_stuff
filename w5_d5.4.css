@@ -1,0 +1,31 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#planet-list label,
+#planet-details label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5em;
+}
+
+#planet-list input[type="checkbox"],
+#planet-details input[type="checkbox"] {
+    margin-right: 0.5em;
+}
+
+#data-output {
+    width: 100%;
+    max-width: 800px;
+    box-sizing: border-box;
+    height: 20vh;
+    min-height: 150px;
+    resize: vertical;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+}
+
+#selected-details {
+    width: 100%;
+    max-width: 800px;
+}

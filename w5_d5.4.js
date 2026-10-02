@@ -1,12 +1,4 @@
-/* JavaScript code for Week 5 Discussion 5.4
-
-TODO:
-  DONE -- 0. Create planet class
-  DONE -- 1. Read and parse JSON for planet and characteristics data
-  DONE --Build checkboxes for Planets (HTML DOM)
-  3. Populate data window on every user selection change
-  DONE -- Clear Selections button functionality
- */
+// JavaScript code for Week 5 Discussion 5.4
 
 // Setup some globals
 const dataFile = "solar_system_data.json";
@@ -34,10 +26,10 @@ class Planet {
     this.orbitYr = orbitYr; // in years
     this.orbitKm = orbitKm; // in km
     this.orbitAu = (orbitKm / 149597870.7).toFixed(2); // Convert km to AU rounded to 2 decimal places
-    this.moonsPerm = moonsPerm; 
+    this.moonsPerm = moonsPerm;
     this.moonsProv = moonsProv;
     if (moonsProv === 0) {
-      this.moonsProv = "None"; 
+      this.moonsProv = "None";
     }
   }
 }
@@ -78,7 +70,7 @@ function processPlanetData(data) {
         planetData.orb_yr,
         planetData.mass_kg,
         planetData.moons.permanently_named,
-        planetData.moons.provisional_count
+        planetData.moons.provisional_count,
       );
       planets.push(planet);
       console.log(`Created Planet object for ${planet.name}:`, planet);
@@ -90,15 +82,14 @@ function processPlanetData(data) {
 function buildPlanetCheckboxes() {
   const planetCheckboxContainer = document.getElementById("planet-list");
   planets.forEach((planet) => {
+    const label = document.createElement("label");
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
     checkbox.id = `planet_${planet.name}`;
     checkbox.value = planet.name;
     checkbox.name = "planet"; // Group checkboxes by name for easier selection later
-    const label = document.createElement("label");
-    label.htmlFor = `planet_${planet.name}`;
-    label.textContent = planet.name;
-    planetCheckboxContainer.appendChild(checkbox);
+    label.appendChild(checkbox);
+    label.appendChild(document.createTextNode(planet.name));
     planetCheckboxContainer.appendChild(label);
   });
 }
@@ -150,26 +141,14 @@ function updateDataWindow() {
     textarea.value =
       "Please select at least one characteristic to see the data.";
   } else {
+    // Both planets and characteristics are selected, so display the data
     let output = "";
-    // Both planets and characteristics are selected, display the data
-    //
-    // Debugging: DIsplay raw selections in the textarea for verification
-    //
-    // output += "Raw user selections:\n";
-    // selectedPlanets.forEach((planet) => {
-    //   output += `Planet: ${planet}\n`;
-    // });
-    // selectedCharacteristics.forEach((characteristic) => {
-    //   output += `Characteristic: ${characteristic}\n`;
-    // });
-    // output += "\n";
-    // Loop through selected planets and characteristics to display the data
     selectedPlanets.forEach((planetName) => {
       const planet = planets.find((p) => p.name === planetName);
       if (planet) {
         output += formatPlanetData(planet, selectedCharacteristics);
         if (selectedPlanets.length > 1) {
-          output += "\n\n"; // Add a blank line between planets if multiple are selected
+          output += "\n\n"; // Add a blank line between planets if >1 are selected
         }
       }
     });
@@ -199,7 +178,7 @@ function formatPlanetData(planet, characteristics) {
   console.log(`Formatting data for planet: ${planet.name}`);
   console.log(`Selected characteristics: ${characteristics}`);
   let output = `Planet: ${planet.name}\n`;
-  const asterisks  = "*".repeat(9 + planet.name.length);
+  const asterisks = "*".repeat(9 + planet.name.length);
   output += asterisks + "\n";
   console.log(`Planet data:`, planet);
   characteristics.forEach((characteristic) => {
@@ -219,7 +198,7 @@ function formatPlanetData(planet, characteristics) {
       case "moons":
         if (planet.moonsPerm !== "None") {
           const moonList = planet.moonsPerm.join(", ");
-          output += `Moons (permanently named): ${moonList}\n`
+          output += `Moons (permanently named): ${moonList}\n`;
         } else {
           output += `Moons (permanently named): planet.moonsPerm\n`;
         }
