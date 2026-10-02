@@ -14,7 +14,7 @@ class Planet {
     orbitKm,
     orbitYr,
     massKg,
-    moonsPerm = "None",
+    moonsPerm,
     moonsProv,
     massEarths = null,
     orbitAu = null,
@@ -27,6 +27,9 @@ class Planet {
     this.orbitKm = orbitKm; // in km
     this.orbitAu = (orbitKm / 149597870.7).toFixed(2); // Convert km to AU rounded to 2 decimal places
     this.moonsPerm = moonsPerm;
+    if (moonsPerm.length === 0) {
+      this.moonsPerm = "None";
+    }
     this.moonsProv = moonsProv;
     if (moonsProv === 0) {
       this.moonsProv = "None";
@@ -200,7 +203,7 @@ function formatPlanetData(planet, characteristics) {
           const moonList = planet.moonsPerm.join(", ");
           output += `Moons (permanently named): ${moonList}\n`;
         } else {
-          output += `Moons (permanently named): planet.moonsPerm\n`;
+          output += `Moons (permanently named): ${planet.moonsPerm}\n`;
         }
         output += `Moons (provisional): ${planet.moonsProv}\n`;
         break;

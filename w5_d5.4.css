@@ -29,3 +29,6 @@ body {
     width: 100%;
     max-width: 800px;
 }
+#clear {
+    margin-top: 1em;
+}
