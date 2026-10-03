@@ -2,12 +2,12 @@
 
 // Setup some globals
 const dataFile = "solar_system_data.json";
-const apiUrl = "https://api.le-systeme-solaire.net/rest/bodies?filter%5B%5D=isPlanet%2Ceq%2Ctrue"; // filter set for planets only
-const apiKey = "d36b8ca0-2be3-4569-86a5-586732d7ec0d"; // Provided by the API service for authentication  
+const apiUrl =
+  "https://api.le-systeme-solaire.net/rest/bodies?filter%5B%5D=isPlanet%2Ceq%2Ctrue"; // filter set for planets only
+const apiKey = "d36b8ca0-2be3-4569-86a5-586732d7ec0d"; // Provided by the API service for authentication
 let planetData = null;
 const planets = [];
 let earthMassKg = null; // Will be set when loading planet data
-
 
 // Get started by calling function to load planet data, process it, and dynamically add planet checkboxes
 loadPlanetDataFromAPI(apiUrl, apiKey).then((data) => {
@@ -17,8 +17,10 @@ loadPlanetDataFromAPI(apiUrl, apiKey).then((data) => {
   //buildPlanetCheckboxes();
 });
 
+
 // Function to read data from API and return a JSON object
-async function loadPlanetDataFromAPI(apiUrl, apiKey) {  try {
+async function loadPlanetDataFromAPI(apiUrl, apiKey) {
+  try {
     const response = await fetch(apiUrl, {
       method: "GET",
       headers: {
@@ -33,7 +35,12 @@ async function loadPlanetDataFromAPI(apiUrl, apiKey) {  try {
     console.log("Planet data loaded from API:", data);
     return data;
   } catch (error) {
-    console.error("Error loading planet data from API:", error);
+    console.error(
+      "Error loading planet data from API:",
+      error.name,
+      error.message,
+    );
+    return null;
   }
 }
 
@@ -68,19 +75,6 @@ class Planet {
   }
 }
 
-// // Function for Discusion 5.4 only
-// // Read JSON file into a JSON object
-// async function loadPlanetData() {
-//   try {
-//     const response = await fetch(dataFile);
-//     if (!response.ok) {
-//       throw new Error(`Could not load ${dataFile}: ${response.status}`);
-//     }
-//     return response.json();
-//   } catch (error) {
-//     console.error("Error loading planet data:", error);
-//   }
-// }
 
 // Function to process planet data and create Planet objects
 function processPlanetData(data) {
@@ -128,7 +122,6 @@ function buildPlanetCheckboxes() {
     planetCheckboxContainer.appendChild(label);
   });
 }
-
 
 // Add event listeners to checkboxes to update the data window on selection change
 document.addEventListener("change", (event) => {
