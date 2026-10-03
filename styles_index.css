@@ -16,6 +16,8 @@ main {
   box-sizing: border-box;
   background-color: rgba(255, 255, 255, 0.45);
   min-height: 100vh;
+  border-radius: 1rem;
+  border: 1px solid rgba(45, 46, 45, 1.0);
 }
 
 main {
@@ -24,8 +26,8 @@ main {
 
 details {
   margin-bottom: 1rem;
-  border: 1px solid rgba(45, 46, 45, 1.0);
-  border-radius: 10px;
+  border: 1px solid rgba(45, 46, 25, 1.0);
+  border-radius: 1rem;
   padding:  0.5rem 0.5rem 0rem 0.5rem; ;
   background-color: rgba(255, 255, 255, 0.3); /* Fallback color in case the background image doesn't load */
   color:rgba(45, 46, 45, 1.0)
@@ -102,6 +104,9 @@ a:active {
 }
 
 .coming-soon summary, .coming-soon details, .coming-soon p, .coming-soon .discussion {
-  color: rgba(148, 148, 148, 1.0)    /* light gray color for "coming soon" == (148, 148, 148) WCAG OK */      
+  color: rgba(148, 148, 148, 1.0)    /* light gray color for "coming soon" == (148, 148, 148) WCAG OK */  
 }
 
+.coming-soon details[name="my-accordion"] {
+   border: 1px solid rgba(148, 148, 148, 1.0);
+}
