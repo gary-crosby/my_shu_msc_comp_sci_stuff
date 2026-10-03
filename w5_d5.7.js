@@ -1,10 +1,13 @@
 // JavaScript code for Week 5 Discussion 5.7
 
 // Setup some globals
-const dataFile = "solar_system_data.json";
+//const dataFile = "solar_system_data.json";
+// API has filter set for planets only. Tested OK in https://api.le-systeme-solaire.net/swagger/
 const apiUrl =
-  "https://api.le-systeme-solaire.net/rest/bodies?filter%5B%5D=isPlanet%2Ceq%2Ctrue"; // filter set for planets only
-const apiKey = "d36b8ca0-2be3-4569-86a5-586732d7ec0d"; // Provided by the API service for authentication
+  "https://api.le-systeme-solaire.net/rest/bodies?filter%5B%5D=isPlanet%2Ceq%2Ctrue";
+// API key Provided by the API service for authentication. Tested OK in https://api.le-systeme-solaire.net/swagger/
+// Yes, I know, for security it should be stored in env variable or server-side, not in client-side code
+const apiKey = "d36b8ca0-2be3-4569-86a5-586732d7ec0d";
 let planetData = null;
 const planets = [];
 let earthMassKg = null; // Will be set when loading planet data
@@ -17,17 +20,23 @@ loadPlanetDataFromAPI(apiUrl, apiKey).then((data) => {
   //buildPlanetCheckboxes();
 });
 
-
 // Function to read data from API and return a JSON object
 async function loadPlanetDataFromAPI(apiUrl, apiKey) {
   try {
-    const response = await fetch(apiUrl, {
+    const request = new Request(apiUrl, {
       method: "GET",
       headers: {
-        Authorization: `Bearer ${apiKey}`,
-        accept: `application/json`,
+        authorization: `Bearer ${apiKey}`,
+        accept: "application/json",
       },
     });
+    console.log("Request URL:", request.url);
+    console.log("Request method:", request.method);
+    console.log(
+      "Request headers:",
+      Object.fromEntries(request.headers.entries()),
+    );
+    const response = await fetch(request);
     if (!response.ok) {
       throw new Error(`Could not load data from API: ${response.status}`);
     }
@@ -74,7 +83,6 @@ class Planet {
     }
   }
 }
-
 
 // Function to process planet data and create Planet objects
 function processPlanetData(data) {
