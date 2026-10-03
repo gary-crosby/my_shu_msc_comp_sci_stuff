@@ -5,7 +5,7 @@
 // API has filter set for planets only. Tested OK in https://api.le-systeme-solaire.net/swagger/
 const apiUrl =
   "https://api.le-systeme-solaire.net/rest/bodies?filter%5B%5D=isPlanet%2Ceq%2Ctrue";
-// API key Provided by the API service for authentication. Tested OK in https://api.le-systeme-solaire.net/swagger/
+// API key Provided by the API service for authentication.Tested OK in https://api.le-systeme-solaire.net/swagger/
 // Yes, I know, for security it should be stored in env variable or server-side, not in client-side code
 const apiKey = "d36b8ca0-2be3-4569-86a5-586732d7ec0d";
 let planetData = null;
