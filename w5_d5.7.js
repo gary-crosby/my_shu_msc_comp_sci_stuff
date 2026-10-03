@@ -37,16 +37,41 @@ class Planet {
   }
 }
 
-// Read JSON file into a JSON object
-async function loadPlanetData() {
+// // Function for Discusion 5.4 only
+// // Read JSON file into a JSON object
+// async function loadPlanetData() {
+//   try {
+//     const response = await fetch(dataFile);
+//     if (!response.ok) {
+//       throw new Error(`Could not load ${dataFile}: ${response.status}`);
+//     }
+//     return response.json();
+//   } catch (error) {
+//     console.error("Error loading planet data:", error);
+//   }
+// }
+
+// Function to read data from API and return a JSON object
+async function loadPlanetDataFromAPI() {
+  const apiUrl = "https://api.le-systeme-solaire.net/rest/bodies/";
+  const apiKey = "25fd57be-e8d4-497a-9f57-793bad6c6256"; //
   try {
-    const response = await fetch(dataFile);
+    const response = await fetch(apiUrl, {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${apiKey}`,
+        Accept: "application/json",
+      },
+    });
+
     if (!response.ok) {
-      throw new Error(`Could not load ${dataFile}: ${response.status}`);
+      throw new Error(`Could not load data from API: ${response.status}`);
     }
-    return response.json();
+    const data = await response.json();
+    console.log("Planet data loaded from API:", data);
+    return data;
   } catch (error) {
-    console.error("Error loading planet data:", error);
+    console.error("Error loading planet data from API:", error);
   }
 }
 
@@ -98,11 +123,11 @@ function buildPlanetCheckboxes() {
 }
 
 // Call the function to load planet data, process it, and dynamically add planet checkboxes
-loadPlanetData().then((data) => {
+loadPlanetDataFromAPI().then((data) => {
   planetData = data;
   console.log("Planet data loaded:", planetData);
-  processPlanetData(planetData);
-  buildPlanetCheckboxes();
+  //processPlanetData(planetData);
+  //buildPlanetCheckboxes();
 });
 
 // Add event listeners to checkboxes to update the data window on selection change
@@ -137,8 +162,7 @@ function updateDataWindow() {
   }
   // No characteristics selected, but planets are selected
   else if (selectedCharacteristics.length === 0) {
-    textarea.value =
-      "Please select at least one characteristic.";
+    textarea.value = "Please select at least one characteristic.";
   } else {
     // Both planets and characteristics are selected, so display the data
     let output = "";
@@ -161,8 +185,7 @@ function clearSelections() {
   console.log("Resetting data window and clearing selections...");
   // Reset the data window to its initial state
   const textarea = document.getElementById("data-output");
-  textarea.value =
-    "Please select at least one planet and one characteristic.";
+  textarea.value = "Please select at least one planet and one characteristic.";
   // Clear all checkboxes ...
   const checkboxes = document.querySelectorAll('input[type="checkbox"]');
   checkboxes.forEach((checkbox) => {
