@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week 5 Discussion 5.7: Solar System Explorer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Space+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="w5_d5.4.css" />
+  </head>
+  F
+  <body>
+    <div id="page-content">
+      <div id="planet-info">
+        <h1>Solar System Explorer V.2</h1>
+        <p>Learn about the amazing planets in our solar system!</p>
+      </div>
+
+      <div id="planet-list">
+        <!-- Dynamically add planet checkboxes to the DOM from JSON data -->
+        <p>Step 1. Select at least one planet</p>
+      </div>
+
+      <div id="planet-details">
+        <p>Step 2. Select at least one characteristic</p>
+        <label>
+          <input type="checkbox" name="details" value="type" />
+          Type
+        </label>
+        <label>
+          <input type="checkbox" name="details" value="massEarths" />
+          Mass (Earth masses)
+        </label>
+        <label>
+          <input type="checkbox" name="details" value="orbitYr" />
+          Orbital period (Earth years)
+        </label>
+        <label>
+          <input type="checkbox" name="details" value="orbitAu" />
+          Orbital distance from Sun (au)
+        </label>
+        <label>
+          <input type="checkbox" name="details" value="moons" />
+          Moons
+        </label>
+      </div>
+
+      <div id="selected-details">
+        <!-- Dynamically display user selected details here -->
+        <p>Step 3. Review your data</p>
+        <textarea id="data-output" rows="10" cols="80" readonly>
+Please select at least one planet and one characteristic.</textarea
+        >
+      </div>
+
+      <div id="clear">
+        <input
+          type="button"
+          value="Clear selections"
+          onclick="clearSelections()"
+        />
+      </div>
+
+      <details>
+        <summary>Credits</summary>
+        <p>
+          Background image courtesy NASA from
+          <a
+            href="https://science.nasa.gov/solar-system/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >https://science.nasa.gov/solar-system</a
+          >
+        </p>
+        <p>Solar system data from The Solar System OpenData at 
+            <a
+              href="https://api.le-systeme-solaire.net/en/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >https://api.le-systeme-solaire.net</a></p>
+      </details>
+
+      <script src="w5_d5.7.js" defer></script>
+    </div>
+  </body>
+</html>
