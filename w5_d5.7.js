@@ -5,7 +5,7 @@ const dataFile = "solar_system_data.json";
 let planetData = null;
 const planets = [];
 let earthMassKg = null; // Will be set when loading planet data
-const apiUrl = "https://api.le-systeme-solaire.net/rest/bodies/";
+const apiUrl = "https://api.le-systeme-solaire.net/rest/bodies?filter%5B%5D=isPlanet%2Ceq%2Ctrue";
 const apiKey = "d36b8ca0-2be3-4569-86a5-586732d7ec0d";
 
 // Call the function to load planet data, process it, and dynamically add planet checkboxes
