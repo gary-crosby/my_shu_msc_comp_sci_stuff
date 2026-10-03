@@ -2,12 +2,12 @@
 
 // Setup some globals
 //const dataFile = "solar_system_data.json";
-// API has filter set for planets only. Tested OK in https://api.le-systeme-solaire.net/swagger/
-const apiUrl =
-  "https://api.le-systeme-solaire.net/rest/bodies?filter%5B%5D=isPlanet%2Ceq%2Ctrue";
 // API key Provided by the API service for authentication.Tested OK in https://api.le-systeme-solaire.net/swagger/
 // Yes, I know, for security it should be stored in env variable or server-side, not in client-side code
 const apiKey = "d36b8ca0-2be3-4569-86a5-586732d7ec0d";
+// API has filter set for planets only. Tested OK in https://api.le-systeme-solaire.net/swagger/
+const apiUrl =
+  "https://api.le-systeme-solaire.net/rest/bodies?filter%5B%5D=isPlanet%2Ceq%2Ctrue";
 let planetData = null;
 const planets = [];
 let earthMassKg = null; // Will be set when loading planet data
@@ -15,7 +15,7 @@ let earthMassKg = null; // Will be set when loading planet data
 // Get started by calling function to load planet data, process it, and dynamically add planet checkboxes
 loadPlanetDataFromAPI(apiUrl, apiKey).then((data) => {
   planetData = data;
-  console.log("Planet data loaded:", planetData);
+  console.log("DEBUG Planet data loaded:", planetData);
   //processPlanetData(planetData);
   //buildPlanetCheckboxes();
 });
@@ -27,13 +27,13 @@ async function loadPlanetDataFromAPI(apiUrl, apiKey) {
       method: "GET",
       headers: {
         authorization: `Bearer ${apiKey}`,
-        accept: "application/json",
+        accept: "application/json"
       },
     });
-    console.log("Request URL:", request.url);
-    console.log("Request method:", request.method);
+    console.log("DEBUG Request URL:", request.url);
+    console.log("DEBUG Request method:", request.method);
     console.log(
-      "Request headers:",
+      "DEBUG Request headers:",
       Object.fromEntries(request.headers.entries()),
     );
     const response = await fetch(request);
@@ -45,7 +45,7 @@ async function loadPlanetDataFromAPI(apiUrl, apiKey) {
     return data;
   } catch (error) {
     console.error(
-      "Error loading planet data from API:",
+      "DEBUG Error loading planet data from API:",
       error.name,
       error.message,
     );
