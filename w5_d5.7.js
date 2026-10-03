@@ -1,10 +1,21 @@
-// JavaScript code for Week 5 Discussion 5.4
+// JavaScript code for Week 5 Discussion 5.7
 
 // Setup some globals
 const dataFile = "solar_system_data.json";
 let planetData = null;
 const planets = [];
 let earthMassKg = null; // Will be set when loading planet data
+const apiUrl = "https://api.le-systeme-solaire.net/rest/bodies/";
+const apiKey = "d36b8ca0-2be3-4569-86a5-586732d7ec0d";
+
+// Call the function to load planet data, process it, and dynamically add planet checkboxes
+loadPlanetDataFromAPI(apiUrl, apiKey).then((data) => {
+  planetData = data;
+  console.log("Planet data loaded:", planetData);
+  //processPlanetData(planetData);
+  //buildPlanetCheckboxes();
+});
+
 
 // Define the Planet class
 class Planet {
@@ -52,18 +63,14 @@ class Planet {
 // }
 
 // Function to read data from API and return a JSON object
-async function loadPlanetDataFromAPI() {
-  const apiUrl = "https://api.le-systeme-solaire.net/rest/bodies/";
-  const apiKey = "25fd57be-e8d4-497a-9f57-793bad6c6256"; //
-  try {
+async function loadPlanetDataFromAPI(apiUrl, apiKey) {  try {
     const response = await fetch(apiUrl, {
       method: "GET",
       headers: {
         Authorization: `Bearer ${apiKey}`,
-        Accept: "application/json",
+        Accept: `application/json`,
       },
     });
-
     if (!response.ok) {
       throw new Error(`Could not load data from API: ${response.status}`);
     }
@@ -122,13 +129,6 @@ function buildPlanetCheckboxes() {
   });
 }
 
-// Call the function to load planet data, process it, and dynamically add planet checkboxes
-loadPlanetDataFromAPI().then((data) => {
-  planetData = data;
-  console.log("Planet data loaded:", planetData);
-  //processPlanetData(planetData);
-  //buildPlanetCheckboxes();
-});
 
 // Add event listeners to checkboxes to update the data window on selection change
 document.addEventListener("change", (event) => {
