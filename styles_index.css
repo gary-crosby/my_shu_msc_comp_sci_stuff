@@ -18,12 +18,18 @@ main {
   min-height: 100vh;
 }
 
+main {
+  color:rgba(14, 14, 14, 1.0)
+}
+
 details {
   margin-bottom: 1rem;
-  border: 1px solid #180101;
-  border-radius: 4px;
+  border: 1px solid rgba(45, 46, 45, 1.0);
+  border-radius: 10px;
   padding:  0.5rem 0.5rem 0rem 0.5rem; ;
   background-color: rgba(255, 255, 255, 0.3);
+  color:rgba(45, 46, 45, 1.0)
+
 }
 
 summary {
@@ -31,6 +37,7 @@ summary {
   margin: 0.5rem;
   padding: 0.5rem;
   font-weight: bold;
+  color:rgba(14, 14, 14, 1.0)
 }
 
 .my-accordion {
@@ -50,7 +57,7 @@ summary {
 .discussion  {
   margin-bottom: 0.5rem;
   font-size: 1.15rem;
-  font-weight: 700;
+  font-weight: bold;
 }
 
 h1 { 
@@ -93,3 +100,8 @@ a:active {
 .content p:last-of-type {
   margin-bottom: 0;
 }
+
+.coming-soon summary, .coming-soon details, .coming-soon p, .coming-soon .discussion {
+  color: rgba(148, 148, 148, 1.0)    /* light gray color for "coming soon" == (148, 148, 148) WCAG OK */      
+}
+
