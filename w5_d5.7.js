@@ -2,13 +2,14 @@
 
 // Setup some globals
 const dataFile = "solar_system_data.json";
+const apiUrl = "https://api.le-systeme-solaire.net/rest/bodies?filter%5B%5D=isPlanet%2Ceq%2Ctrue"; // filter set for planets only
+const apiKey = "d36b8ca0-2be3-4569-86a5-586732d7ec0d"; // Provided by the API service for authentication  
 let planetData = null;
 const planets = [];
 let earthMassKg = null; // Will be set when loading planet data
-const apiUrl = "https://api.le-systeme-solaire.net/rest/bodies?filter%5B%5D=isPlanet%2Ceq%2Ctrue";
-const apiKey = "d36b8ca0-2be3-4569-86a5-586732d7ec0d";
 
-// Call the function to load planet data, process it, and dynamically add planet checkboxes
+
+// Get started by calling function to load planet data, process it, and dynamically add planet checkboxes
 loadPlanetDataFromAPI(apiUrl, apiKey).then((data) => {
   planetData = data;
   console.log("Planet data loaded:", planetData);
@@ -16,6 +17,25 @@ loadPlanetDataFromAPI(apiUrl, apiKey).then((data) => {
   //buildPlanetCheckboxes();
 });
 
+// Function to read data from API and return a JSON object
+async function loadPlanetDataFromAPI(apiUrl, apiKey) {  try {
+    const response = await fetch(apiUrl, {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${apiKey}`,
+        accept: `application/json`,
+      },
+    });
+    if (!response.ok) {
+      throw new Error(`Could not load data from API: ${response.status}`);
+    }
+    const data = await response.json();
+    console.log("Planet data loaded from API:", data);
+    return data;
+  } catch (error) {
+    console.error("Error loading planet data from API:", error);
+  }
+}
 
 // Define the Planet class
 class Planet {
@@ -61,26 +81,6 @@ class Planet {
 //     console.error("Error loading planet data:", error);
 //   }
 // }
-
-// Function to read data from API and return a JSON object
-async function loadPlanetDataFromAPI(apiUrl, apiKey) {  try {
-    const response = await fetch(apiUrl, {
-      method: "GET",
-      headers: {
-        Authorization: `Bearer ${apiKey}`,
-        Accept: `application/json`,
-      },
-    });
-    if (!response.ok) {
-      throw new Error(`Could not load data from API: ${response.status}`);
-    }
-    const data = await response.json();
-    console.log("Planet data loaded from API:", data);
-    return data;
-  } catch (error) {
-    console.error("Error loading planet data from API:", error);
-  }
-}
 
 // Function to process planet data and create Planet objects
 function processPlanetData(data) {
