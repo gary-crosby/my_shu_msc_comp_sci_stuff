@@ -14,9 +14,9 @@
     <header>
       <h1>XKCD Comic Randomizer</h1>
     </header>
-    <main>
+    <main id="container">
       <h2 id="rnd-com-title"></h2>
-      <img id="rnd-com-image" onclick="displayRandomXKCDComic()"/>
+      <img id="rnd-com-image" onclick="displayRandomXKCDComic()" />
       <details>
         <summary>Transcipt</summary>
         <p id="rnd-com-txt"></p>
@@ -25,7 +25,7 @@
         type="button"
         id="rnd-com-btn"
         value="Get a New Random Comic"
-        onclick="displayRandomXKCDComic();"
+        onclick="displayRandomXKCDComic()"
       />
     </main>
     <footer>
@@ -50,10 +50,10 @@
             >Creative Commons 2.5 Attribution-Noncommercial License</a
           >
           so it's okay for me to reproduce them here in a non-commercial student
-          project. The official XKCD API is a fantastic resource but it lacks CORS
-          headers. This makes it challenging to use directly in web applications
-          (like this one) hosted on different domains. So, instead of accessing
-          the official XKCD API, this web app accesses
+          project. The official XKCD API is a fantastic resource but it lacks
+          CORS headers. This makes it challenging to use directly in web
+          applications (like this one) hosted on different domains. So, instead
+          of accessing the official XKCD API, this web app accesses
           <a
             href="https://raw.githubusercontent.com/aghontpi/mirror-xkcd-api/main/api/"
             target="_blank"
@@ -61,16 +61,23 @@
             >this mirror</a
           >
           which does support CORS.
-        </p><p>The <a
-                href="https://github.com/ipython/xkcd-font"
-                target="_blank"
-                rel="noopener noreferrer"
-                >xkcd-font</a
-              > is used under the <a
-                href="https://creativecommons.org/licenses/by-nc/3.0/deed.en"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Creative Commons 3.0 Attribution-Noncommercial License</a></p>
+        </p>
+        <p>
+          The
+          <a
+            href="https://github.com/ipython/xkcd-font"
+            target="_blank"
+            rel="noopener noreferrer"
+            >xkcd-font</a
+          >
+          is used under the
+          <a
+            href="https://creativecommons.org/licenses/by-nc/3.0/deed.en"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Creative Commons 3.0 Attribution-Noncommercial License</a
+          >
+        </p>
       </details>
     </footer>
     <script type="text/javascript">
