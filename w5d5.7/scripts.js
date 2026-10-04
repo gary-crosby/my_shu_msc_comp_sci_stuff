@@ -4,18 +4,17 @@
 
 // function to fetch a random XKCD comic and display it
 async function fetchRandomXKCDComic() {
-  
-  // Set flag for success or failure
-  let isSuccess = true;
-  let latestComicNumber = -1;
+
+  let isSuccess = true;  // Set flag for success or failure
+  let latestComicNumber = -1;  // Initialize latest comic number to -1 (invalid)
 
   // Get the latest comic book number
   try {
     const response = await fetch(
       "https://raw.githubusercontent.com/aghontpi/mirror-xkcd-api/main/syncState.json",
     );
-    const latestData = await response.json();
-    latestComicNumber = latestData.last_update_content.id;
+    const data = await response.json();
+    latestComicNumber = data.last_update_content.id;
     console.log(`Latest XKCD comic number: ${latestComicNumber}`);
   } catch (error) {
     console.error("Error fetching latest XKCD comic:", error);
@@ -24,16 +23,22 @@ async function fetchRandomXKCDComic() {
 
   // Generate a random comic number between 1 and the latest comic number
   const randomComicNumber = Math.floor(Math.random() * latestComicNumber) + 1;
-  console.log(`Random XKCD comic number: ${randomComicNumber}`);  
+  console.log(`Random XKCD comic number: ${randomComicNumber}`);
 
-  //
-
-
-
-
-
-
+  // Get the data for the random comic number
+  try {
+    const response = await fetch(
+      `https://raw.githubusercontent.com/aghontpi/mirror-xkcd-api/main/api/${randomComicNumber}/info.0.json`,
+    );
+    const data = await response.json();
+    console.log(`Latest comic data: ${data}`);
+  } catch (error) {
+    console.error("Error fetching random XKCD comic:", error);
+    isSuccess = false;
+  }
+  
   return isSuccess;
+
 }
 
 // Get number of most recent comic
