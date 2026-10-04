@@ -2,28 +2,31 @@
 
 // For API notes, see the bottom of this file
 
-//displayRandomXKCDComic();
-fetchRandomXKCDComic().then((comic) => {
-  if (comic === false) {
-    console.error("Failed to fetch random XKCD comic.");
-    // TODO add an error message and a fallback display ...
-  }
-  else {
-    const rndComTitle = document.getElementById("rnd-com-title");
-    const rndComImage = document.getElementById("rnd-com-image");
-    const rndComTxt = document.getElementById("rnd-com-txt");
-    rndComTitle.textContent = comic.safe_title;
-    rndComImage.src = comic.img;
-    rndComImage.alt = comic.alt;
-    rndComTxt.textContent = comic.alt;;
-  }
-});
+// Immediately fetch and display a random XKCD comic when the page loads
+displayRandomXKCDComic();
 
+// Calls another funcion to fetch() a random comic
+// and the displays the comic on the page
+function displayRandomXKCDComic() {
+  fetchRandomXKCDComic().then((comic) => {
+    if (comic === false) {
+      console.error("Failed to fetch random XKCD comic.");
+      // TODO add an error message and a fallback display ...
+    } else {
+      const rndComTitle = document.getElementById("rnd-com-title");
+      const rndComImage = document.getElementById("rnd-com-image");
+      const rndComTxt = document.getElementById("rnd-com-txt");
+      rndComTitle.textContent = comic.safe_title;
+      rndComImage.src = comic.img;
+      rndComImage.alt = comic.alt;
+      rndComTxt.textContent = comic.alt;
+    }
+  });
+}
 
 // Fetches a random XKCD comic and returns its data as JSON
 // Returns false if there was an error fetching the comic
 async function fetchRandomXKCDComic() {
-
   let latestComicNumber = null;
   let data = null;
 
@@ -56,8 +59,6 @@ async function fetchRandomXKCDComic() {
   }
   return data;
 }
-
-
 
 /***** Begin API Notes *****
  
@@ -106,4 +107,3 @@ async function fetchRandomXKCDComic() {
   }
 
 ***** End API Notes *****/
-
