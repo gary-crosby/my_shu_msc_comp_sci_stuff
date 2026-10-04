@@ -9,27 +9,23 @@
   </head>
   <body>
     <!-- This is a simple web page that displays a random XKCD comic.
-     The comic is fetched from the XKCD API and displayed on the page.
-     The user can click a button to fetch a new random comic. -->
-    <header>
-      <h1>XKCD Comic Randomizer</h1>
-    </header>
-    <main id="container">
-      <h2 id="rnd-com-title"></h2>
+     The comic is fetched from an  XKCD API and displayed on the page.
+     The user can click a button (or the comic) to get a new random comic. -->
+
+    <main class="container">
+      <h1 id="rnd-com-title">Randomizing ...</h1>
+
       <img id="rnd-com-image" onclick="displayRandomXKCDComic()" />
-      <details>
-        <summary>Transcipt</summary>
-        <p id="rnd-com-txt"></p>
-      </details>
+      
+
       <input
         type="button"
         id="rnd-com-btn"
         value="Get a New Random Comic"
         onclick="displayRandomXKCDComic()"
       />
-    </main>
-    <footer>
-      <details>
+
+      <details closed>
         <summary>About</summary>
         <p>
           The
@@ -50,7 +46,8 @@
             >Creative Commons 2.5 Attribution-Noncommercial License</a
           >
           so it's okay for me to reproduce them here in a non-commercial student
-          project. The official XKCD API is a fantastic resource but it lacks
+          project.
+          </p><p>The official XKCD API is a fantastic resource but it lacks
           CORS headers. This makes it challenging to use directly in web
           applications (like this one) hosted on different domains. So, instead
           of accessing the official XKCD API, this web app accesses
@@ -79,10 +76,12 @@
           >
         </p>
       </details>
-    </footer>
-    <script type="text/javascript">
-      // Call the function to display a random XKCD comic when the page loads
-      displayRandomXKCDComic();
-    </script>
+      
+      <script type="text/javascript">
+        // Call the function to display a random XKCD comic when the page loads
+        displayRandomXKCDComic();
+      </script>
+      
+    </main>
   </body>
 </html>
