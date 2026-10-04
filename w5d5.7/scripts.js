@@ -5,6 +5,15 @@
 // Calls an async function to fetch() a random comic
 // and the displays the comic on the page
 function displayRandomXKCDComic() {
+  // Reseto everything to a default state before fetching a new comic
+  const rndComTitle = document.getElementById("rnd-com-title");
+  const rndComTranscript = document.getElementById("rnd-com-transcript");
+  const rndComImage = document.getElementById("rnd-com-image");
+  rndComTitle.textContent = "Randomizing ... please wait.";
+  //rndComTranscript.textContent = "Randomizing ... please wait.";
+  rndComImage.alt = "";
+  rndComImage.src = "";
+
   fetchRandomXKCDComic().then((comic) => {
     if (comic === false) {
       console.error("Failed to fetch random XKCD comic.");
@@ -16,16 +25,21 @@ function displayRandomXKCDComic() {
         detailsElement.open = false;
       }
       // Display the comic on the page
-      const rndComImage = document.getElementById("rnd-com-image");
       const rndComTitle = document.getElementById("rnd-com-title");
-      const rndComTxt = document.getElementById("rnd-com-txt");
-      rndComTitle.textContent = `Random XKCD Comic: ${comic.safe_title}`;
+      const rndComTranscript = document.getElementById("rnd-com-transcript");
+      const rndComImage = document.getElementById("rnd-com-image");
       rndComImage.src = comic.img;
       rndComImage.alt = comic.alt;
-      rndComTxt.textContent = comic.alt;
+      rndComTitle.textContent = `Random XKCD Comic: ${comic.safe_title}`;
+      //rndComTranscript.textContent = comic.transcript;
     }
   });
 }
+
+function formatTranscript(transcript) {
+  // Split the transcript into lines and remove empty lines
+} 
+
 
 // Fetches a random XKCD comic and returns its data as JSON
 // Returns false if there was an error fetching the comic

@@ -40,19 +40,21 @@ h1 {
 
 p {
   color: rgba(14, 14, 14, 1.0);
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 input[type="button"] {
   display: block;
-  font-size: 1.0em;
+  font-size: 1.1em;
   padding: 0.5em 1em;
   border: none;
   border-radius: 10px;
   background-color: rgba(45, 46, 45, 1.0);
   color: white;
   cursor: pointer;
-  margin: 0 auto 1.25rem;
+  margin: 0 auto 1.25em;
+  margin-top: 1em;
+  margin-bottom: 2em;
 }
 
 img {
@@ -62,16 +64,17 @@ img {
   display: block;
   cursor: pointer;
   margin: 0 auto 1rem;
-  margin-bottom: 1.25rem;
 }
 
 details {
-  margin: 2.5rem auto 0;
+  margin: 1.5rem auto 0;
   max-width: 400px;
+  font-size: 1.2em;
 }
 
 summary {
   cursor: pointer;
   max-width: 400px;
   text-align: center;
+  font-size: 1em;
 }
