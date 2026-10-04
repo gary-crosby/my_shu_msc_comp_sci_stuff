@@ -4,9 +4,10 @@
 
 displayRandomXKCDComic();
 
-function displayRandomXKCDComic() {
-  const comicData = fetchRandomXKCDComic();
-  if (comicData === false) {
+async function displayRandomXKCDComic() {
+  const comic = await fetchRandomXKCDComic();
+  console.log(`Comic data: ${comic.num}`);
+  if (comic === false) {
     console.error("Failed to fetch random XKCD comic.");
     // Need to add code here to tell the user ...
   } else {
@@ -14,18 +15,20 @@ function displayRandomXKCDComic() {
     const rndComTitle = document.getElementById("rnd-com-title");
     const rndComImage = document.getElementById("rnd-com-image");
     const rndComTxt = document.getElementById("rnd-com-txt");
-    rndComTitle.textContent = comicData.safe_title;
-    console.log(`Comic title: ${comicData.num}`);
-    rndComImage.src = comicData.img;
-    rndComImage.alt = comicData.alt;
-    rndComTxt.textContent = comicData.alt;
+    rndComTitle.textContent = comic.safe_title;
+    console.log(`Comic title: ${comic.safe_title}`);
+    rndComImage.src = comic.img;
+    rndComImage.alt = comic.alt;
+    rndComTxt.textContent = comic.alt;
   }
 }
 
 // function to fetch a random XKCD comic and display it
 async function fetchRandomXKCDComic() {
-  let isSuccess = false; // Set flag for success or failure
-  let latestComicNumber = -1; // Initialize latest comic number to -1 (invalid)
+
+  let latestComicNumber = null;
+  let data = null;
+
   // Get the latest comic book number
   try {
     const response = await fetch(
@@ -33,29 +36,29 @@ async function fetchRandomXKCDComic() {
     );
     const data = await response.json();
     latestComicNumber = data.last_update_content.id;
-    console.log(`Latest XKCD comic number: ${latestComicNumber}`);
+    // console.log(`Latest XKCD comic number: ${latestComicNumber}`);
   } catch (error) {
     console.error("Error fetching latest XKCD comic:", error);
-    isSuccess = false;
+    return false;
   }
+
   // Generate a random comic number between 1 and the latest comic number
   const randomComicNumber = Math.floor(Math.random() * latestComicNumber) + 1;
   console.log(`Random XKCD comic number: ${randomComicNumber}`);
+
   // Get the data for the random comic number
   try {
     const response = await fetch(
       `https://raw.githubusercontent.com/aghontpi/mirror-xkcd-api/main/api/${randomComicNumber}/info.0.json`,
     );
-    isSuccess = await response.json();
-    console.log(`Successfully fetched random comic: ${isSuccess.num}`);
-    string = JSON.stringify(isSuccess);
-    console.log(`Comic data: ${string}`);
-    //isSuccess = data;
+    data = await response.json();
+    // console.log(`Successfully fetched random comic: ${data.num}`);
+    // console.log(data);
   } catch (error) {
     console.error("Error fetching random XKCD comic:", error);
-    isSuccess = false;
+    return false;
   }
-  return isSuccess;
+  return data;
 }
 
 /* API Notes:
