@@ -1,11 +1,8 @@
-// JavaScript for Week 5 Discussion 5.7: Random XKCD Comic Viewer
+// JavaScript for Week 5 Discussion 5.7: XKCD Comic Randomizer
 
 // For API notes, see the bottom of this file
 
-// Immediately fetch and display a random XKCD comic when the page loads
-displayRandomXKCDComic();
-
-// Calls another funcion to fetch() a random comic
+// Calls an async function to fetch() a random comic
 // and the displays the comic on the page
 function displayRandomXKCDComic() {
   fetchRandomXKCDComic().then((comic) => {
@@ -13,8 +10,9 @@ function displayRandomXKCDComic() {
       console.error("Failed to fetch random XKCD comic.");
       // TODO add an error message and a fallback display ...
     } else {
-      const rndComTitle = document.getElementById("rnd-com-title");
+      
       const rndComImage = document.getElementById("rnd-com-image");
+      const rndComTitle = document.getElementById("rnd-com-title");
       const rndComTxt = document.getElementById("rnd-com-txt");
       rndComTitle.textContent = comic.safe_title;
       rndComImage.src = comic.img;

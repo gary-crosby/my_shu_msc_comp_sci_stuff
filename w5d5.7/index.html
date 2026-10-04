@@ -6,6 +6,7 @@
     <title>Week 5 Discussion 5.7: XKCD Comic Randomizer</title>
 
     <link rel="stylesheet" href="styles.css" />
+    <script src="scripts.js" type="text/javascript"></script>
   </head>
   <body>
     <!-- This is a simple web page that displays a random XKCD comic.
@@ -16,7 +17,7 @@
     </header>
     <main>
       <h2 id="rnd-com-title"></h2>
-      <img id="rnd-com-image" />
+      <img id="rnd-com-image" onclick="displayRandomXKCDComic()"/>
       <details>
         <summary>Transcipt</summary>
         <p id="rnd-com-txt"></p>
@@ -25,7 +26,7 @@
         type="button"
         id="rnd-com-btn"
         value="Get a New Random Comic"
-        onclick="displayRandomXKCDComic()"
+        onclick="displayRandomXKCDComic();"
       />
     </main>
     <footer>
@@ -67,6 +68,9 @@
         </p>
       </details>
     </footer>
-    <script src="scripts.js" type="text/javascript" defer></script>
+    <script type="text/javascript">
+      // Call the function to display a random XKCD comic when the page loads
+      displayRandomXKCDComic();
+    </script>
   </body>
 </html>
