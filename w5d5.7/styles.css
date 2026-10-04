@@ -6,6 +6,10 @@
   src: url('https://cdn.rawgit.com/ipython/xkcd-font/master/xkcd-script/font/xkcd-script.woff') format('woff');
 }
 
+body {
+  background-color: rgba(0, 0, 0, 1.0);
+}
+
 body,
 input,
 button {
@@ -25,6 +29,7 @@ body {
   height: auto;
   box-sizing: border-box;
   padding: 1rem;
+  background-color: rgba(255, 255, 255, 1.0);
 }
 
 h1 {
