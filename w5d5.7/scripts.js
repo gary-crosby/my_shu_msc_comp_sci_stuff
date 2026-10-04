@@ -5,7 +5,7 @@
 async function fetchRandomXKCDComic() {
   try {
     // Fetch the latest comic to get the total number of comics
-    const latestResponse = await fetch("https://xkcd.com/info.0.json");
+    const latestResponse = await fetch("https://raw.githubusercontent.com/aghontpi/mirror-xkcd-api/main/api/190/info.0.json");
     if (!latestResponse.ok) {
       throw new Error(`Could not fetch latest XKCD comic: ${latestResponse.status}`);
     }

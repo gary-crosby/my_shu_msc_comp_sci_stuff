@@ -52,6 +52,14 @@
           so it's okay for me to reproduce them here in a non-commercial student
           project.
         </p>
+        <p>
+          Note: The official XKCD API is a fantastic resource but lacks CORS
+          headers. This makes it challenging to use directly in web applications
+          (like this one) hosted on different domains. So, instead of accessing the official XKCD API, this web app accesses this <a
+            href="https://raw.githubusercontent.com/aghontpi/mirror-xkcd-api/main/api/"
+           target="_blank" rel="noopener noreferrer" >this mirror</a
+          > which does support CORS.
+        </p>
       </details>
     </footer>
     <script src="scripts.js" type="text/javascript" defer></script>
