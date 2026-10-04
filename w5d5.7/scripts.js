@@ -2,28 +2,26 @@
 
 // For API notes, see the bottom of this file
 
-displayRandomXKCDComic();
-
-async function displayRandomXKCDComic() {
-  const comic = await fetchRandomXKCDComic();
-  console.log(`Comic data: ${comic.num}`);
+//displayRandomXKCDComic();
+fetchRandomXKCDComic().then((comic) => {
   if (comic === false) {
     console.error("Failed to fetch random XKCD comic.");
-    // Need to add code here to tell the user ...
-  } else {
-    // Display the comic data in the HTML
+    // TODO add an error message and a fallback display ...
+  }
+  else {
     const rndComTitle = document.getElementById("rnd-com-title");
     const rndComImage = document.getElementById("rnd-com-image");
     const rndComTxt = document.getElementById("rnd-com-txt");
     rndComTitle.textContent = comic.safe_title;
-    console.log(`Comic title: ${comic.safe_title}`);
     rndComImage.src = comic.img;
     rndComImage.alt = comic.alt;
-    rndComTxt.textContent = comic.alt;
+    rndComTxt.textContent = comic.alt;;
   }
-}
+});
 
-// function to fetch a random XKCD comic and display it
+
+// Fetches a random XKCD comic and returns its data as JSON
+// Returns false if there was an error fetching the comic
 async function fetchRandomXKCDComic() {
 
   let latestComicNumber = null;
@@ -52,8 +50,6 @@ async function fetchRandomXKCDComic() {
       `https://raw.githubusercontent.com/aghontpi/mirror-xkcd-api/main/api/${randomComicNumber}/info.0.json`,
     );
     data = await response.json();
-    // console.log(`Successfully fetched random comic: ${data.num}`);
-    // console.log(data);
   } catch (error) {
     console.error("Error fetching random XKCD comic:", error);
     return false;
@@ -61,8 +57,10 @@ async function fetchRandomXKCDComic() {
   return data;
 }
 
-/* API Notes:
 
+
+/***** Begin API Notes *****
+ 
   The official XKCD API is a fantastic resource but lacks CORS  headers.
   This makes it challenging to use directly in web applications (like this one)
   hosted on different domains. So, instead of accessing the official XKCD API,
@@ -84,12 +82,12 @@ async function fetchRandomXKCDComic() {
     "news": "",
     "safe_title": "IPoD",
     "transcript": "[[Character 1 - wearing a black hat - sits at a computer. Character 2 stands behind Character 1]]
-  Character 1: You see, statisticians communicate using IPoD -- IP over Demographics. For example, the header of
-  the next packet I send will be encoded into the New Jersey death rate.
-  Character 2: So you're going to hack the census bureau and change the number of reported deaths?
-  Character 1: Guess again.
-  Character 1: Hey, have you seen my crossbow?
-  {{Alt: For smaller numbers he has to SAVE lives.  The birthrate channel is even more of a mixed bag.}}",
+      Character 1: You see, statisticians communicate using IPoD -- IP over Demographics. For example, the header of
+      the next packet I send will be encoded into the New Jersey death rate.
+      Character 2: So you're going to hack the census bureau and change the number of reported deaths?
+      Character 1: Guess again.
+      Character 1: Hey, have you seen my crossbow?
+      {{Alt: For smaller numbers he has to SAVE lives.  The birthrate channel is even more of a mixed bag.}}",
     "alt": "For smaller numbers he has to SAVE lives.  The birthrate channel is even more of a mixed bag.",
     "img": "https://imgs.xkcd.com/comics/ipod.png",
     "title": "IPoD",
@@ -107,4 +105,5 @@ async function fetchRandomXKCDComic() {
     }
   }
 
-*/
+***** End API Notes *****/
+

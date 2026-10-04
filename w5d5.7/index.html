@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Week 5 Discussion 5.7: Random XKCD Comic Viewer</title>
+    <title>Week 5 Discussion 5.7: XKCD Comic Randomizer</title>
 
     <link rel="stylesheet" href="styles.css" />
   </head>
@@ -12,12 +12,15 @@
      The comic is fetched from the XKCD API and displayed on the page.
      The user can click a button to fetch a new random comic. -->
     <header>
-      <h1>Random XKCD Comic Viewer</h1>
+      <h1>XKCD Comic Randomizer</h1>
     </header>
     <main>
-<div><h1 id="rnd-com-title"></h1></div>
-<div><img id="rnd-com-image"></div>
-<div><p id="rnd-com-txt"></p></div>
+      <h2 id="rnd-com-title"></h2>
+      <img id="rnd-com-image" />
+      <details>
+        <summary>Transcipt</summary>
+        <p id="rnd-com-txt"></p>
+      </details>
     </main>
     <footer>
       <details>
@@ -32,7 +35,7 @@
             href="https://xkcd.com/about/"
             target="_blank"
             rel="noopener noreferrer"
-            >Randall Munroe</a
+            >the very funny Randall Munroe</a
           >. The comics are licensed under
           <a
             href="https://creativecommons.org/licenses/by-nc/2.5/"
@@ -46,10 +49,15 @@
         <p>
           Note: The official XKCD API is a fantastic resource but lacks CORS
           headers. This makes it challenging to use directly in web applications
-          (like this one) hosted on different domains. So, instead of accessing the official XKCD API, this web app accesses this <a
+          (like this one) hosted on different domains. So, instead of accessing
+          the official XKCD API, this web app accesses this
+          <a
             href="https://raw.githubusercontent.com/aghontpi/mirror-xkcd-api/main/api/"
-           target="_blank" rel="noopener noreferrer" >this mirror</a
-          > which does support CORS.
+            target="_blank"
+            rel="noopener noreferrer"
+            >this mirror</a
+          >
+          which does support CORS.
         </p>
       </details>
     </footer>
