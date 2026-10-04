@@ -16,12 +16,11 @@
       <h1 id="rnd-com-title">Randomizing ...</h1>
 
       <img id="rnd-com-image" onclick="displayRandomXKCDComic()" />
-      
 
       <input
         type="button"
         id="rnd-com-btn"
-        value="Get a New Random Comic"
+        value="Show me a new random comic"
         onclick="displayRandomXKCDComic()"
       />
 
@@ -30,9 +29,8 @@
         <p>
           The
           <a href="https://xkcd.com" target="_blank" rel="noopener noreferrer"
-            >XKCD</a
-          >
-          comics are created by
+            >XKCD comics</a
+          > are created by
           <a
             href="https://xkcd.com/about/"
             target="_blank"
@@ -45,12 +43,19 @@
             rel="noopener noreferrer"
             >Creative Commons 2.5 Attribution-Noncommercial License</a
           >
-          so it's okay for me to reproduce them here in a non-commercial student
+          so it's okay for me to reproduce them here as part of a non-commercial student
           project.
-          </p><p>The official XKCD API is a fantastic resource but it lacks
-          CORS headers. This makes it challenging to use directly in web
-          applications (like this one) hosted on different domains. So, instead
-          of accessing the official XKCD API, this web app accesses
+        </p>
+        <p>
+          The  <a
+            href="https://xkcd.com/json.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            >official XKCD API</a
+          > is a fantastic resource but it lacks CORS
+          headers. This makes it challenging to use directly in a a web application
+          (like this one) that is hosted on a different domain. So, instead of accessing
+          the official XKCD API, this web app uses
           <a
             href="https://raw.githubusercontent.com/aghontpi/mirror-xkcd-api/main/api/"
             target="_blank"
@@ -76,12 +81,11 @@
           >
         </p>
       </details>
-      
+
       <script type="text/javascript">
         // Call the function to display a random XKCD comic when the page loads
         displayRandomXKCDComic();
       </script>
-
     </main>
   </body>
 </html>
