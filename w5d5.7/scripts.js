@@ -31,12 +31,12 @@ async function fetchRandomXKCDComic() {
       `https://raw.githubusercontent.com/aghontpi/mirror-xkcd-api/main/api/${randomComicNumber}/info.0.json`,
     );
     const data = await response.json();
-    console.log(`Latest comic data: ${data}`);
+    console.log(`Successfully fetched random comic: ${data.num}`);
   } catch (error) {
     console.error("Error fetching random XKCD comic:", error);
     isSuccess = false;
   }
-  
+
   return isSuccess;
 
 }
