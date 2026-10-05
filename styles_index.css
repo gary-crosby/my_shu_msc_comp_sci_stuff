@@ -120,7 +120,8 @@ footer {
   margin: 0rem 1rem 0rem 1rem;
 }
 
-.about summary, .about detials {
+.about summary,
+.about detials {
   margin-bottom: 1em;
   margin-top: 1em;
 }
