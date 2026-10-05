@@ -1,0 +1,301 @@
+{"planets":
+  [
+    {
+      "name": "Mercury",
+      "type": "Terrestrial",
+      "distance_from_sun_km": 57900000,
+      "orb_yr": 0.24,
+      "mass_kg": 3.30e+23,
+      "moons": {
+        "permanently_named": [],
+        "provisional_count": 0
+      }
+    },
+    {
+      "name": "Venus",
+      "type": "Terrestrial",
+      "distance_from_sun_km": 108200000,
+      "orb_yr": 0.62,
+      "mass_kg": 4.87e+24,
+      "moons": {
+        "permanently_named": [],
+        "provisional_count": 0
+      }
+    },
+    {
+      "name": "Earth",
+      "type": "Terrestrial",
+      "distance_from_sun_km": 149600000,
+      "orb_yr": 1.00,
+      "mass_kg": 5.97e+24,
+      "moons": {
+        "permanently_named": [
+          "The Moon",
+          "2025 PN7"
+        ],
+        "provisional_count": 0
+      }
+    },
+    {
+      "name": "Mars",
+      "type": "Terrestrial",
+      "distance_from_sun_km": 227900000,
+      "orb_yr": 1.88,
+      "mass_kg": 6.42e+23,
+      "moons": {
+        "permanently_named": [
+          "Phobos",
+          "Deimos"
+        ],
+        "provisional_count": 0
+      }
+    },
+    {
+      "name": "Jupiter",
+      "type": "Gas Giant",
+      "distance_from_sun_km": 778500000,
+      "orb_yr": 11.86,
+      "mass_kg": 1.90e+27,
+      "moons": {
+        "permanently_named": [
+          "Io",
+          "Europa",
+          "Ganymede",
+          "Callisto",
+          "Amalthea",
+          "Himalia",
+          "Elara",
+          "Pasiphae",
+          "Sinope",
+          "Lysithea",
+          "Carme",
+          "Ananke",
+          "Leda",
+          "Adrastea",
+          "Thebe",
+          "Metis",
+          "Callirrhoe",
+          "Themisto",
+          "Megaclite",
+          "Taygete",
+          "Chaldene",
+          "Harpalyke",
+          "Kalyke",
+          "Iocaste",
+          "Erinome",
+          "Praxidike",
+          "Autonoe",
+          "Thyone",
+          "Hermippe",
+          "Aitne",
+          "Eurydome",
+          "Euanthe",
+          "Orthosie",
+          "Sponde",
+          "Pasithee",
+          "Chaldene",
+          "Cyllene",
+          "Eukelade",
+          "Helike",
+          "Aoede",
+          "Arche",
+          "Kore"
+        ],
+        "provisional_count": 54
+      }
+    },
+    {
+      "name": "Saturn",
+      "type": "Gas Giant",
+      "distance_from_sun_km": 1433500000,
+      "orb_yr": 29.46,
+      "mass_kg": 5.68e+26,
+      "moons": {
+        "permanently_named": [
+          "Mimas",
+          "Enceladus",
+          "Tethys",
+          "Dione",
+          "Rhea",
+          "Titan",
+          "Iapetus",
+          "Hyperion",
+          "Phoebe",
+          "Janus",
+          "Epimetheus",
+          "Helene",
+          "Telesto",
+          "Calypso",
+          "Atlas",
+          "Prometheus",
+          "Pandora",
+          "Pan",
+          "Ymir",
+          "Paaliaq",
+          "Siarnaq",
+          "Tarvos",
+          "Kiviuq",
+          "Ijiraq",
+          "Suttungr",
+          "Mundilfari",
+          "Albiorix",
+          "Skathi",
+          "Erriapus",
+          "Narvi",
+          "Greip",
+          "Hyrrokkin",
+          "Jarnsaxa",
+          "Bergelmir",
+          "Fenrir",
+          "Aegir",
+          "Bebhionn",
+          "Farbauti",
+          "Hati",
+          "Thrymr",
+          "Bestla",
+          "Kari",
+          "Loge",
+          "Surtur",
+          "Skoll",
+          "Gridr",
+          "Angrboda"
+        ],
+        "provisional_count": 173
+      }
+    },
+    {
+      "name": "Uranus",
+      "type": "Ice Giant",
+      "distance_from_sun_km": 2877400000,
+      "orb_yr": 84.01,
+      "mass_kg": 8.68e+25,
+      "moons": {
+        "permanently_named": [
+          "Cordelia",
+          "Ophelia",
+          "Bianca",
+          "Cressida",
+          "Desdemona",
+          "Juliet",
+          "Portia",
+          "Rosalind",
+          "Belinda",
+          "Puck",
+          "Caliban",
+          "Sycorax",
+          "Prospero",
+          "Setebos",
+          "Stephano",
+          "Trinculo",
+          "Francisco",
+          "Margaret",
+          "Ferdinand",
+          "Perdita",
+          "Cupid",
+          "Mab"
+        ],
+        "provisional_count": 6
+      }
+    },
+    {
+      "name": "Neptune",
+      "type": "Ice Giant",
+      "distance_from_sun_km": 4503000000,
+      "orb_yr": 164.79,
+      "mass_kg": 1.02e+26,
+      "moons": {
+        "permanently_named": [
+          "Triton",
+          "Nereid",
+          "Naiad",
+          "Thalassa",
+          "Despina",
+          "Galatea",
+          "Larissa",
+          "Proteus",
+          "Halimede",
+          "Sao",
+          "Laomedeia",
+          "Psamathe",
+          "Neso",
+          "Hippocamp"
+        ],
+        "provisional_count": 2
+      }
+    },
+    {
+      "name": "Pluto",
+      "type": "Dwarf",
+      "distance_from_sun_km": 5906000000,
+      "orb_yr": 248.00,
+      "mass_kg": 1.31e+22,
+      "moons": {
+        "permanently_named": [
+          "Charon",
+          "Styx",
+          "Nix",
+          "Kerberos",
+          "Hydra"
+        ],
+        "provisional_count": 0
+      }
+    },
+    {
+      "name": "Ceres",
+      "type": "Dwarf",
+      "distance_from_sun_km": 413700000,
+      "orb_yr": 4.60,
+      "mass_kg": 9.4e+20,
+      "moons": {
+        "permanently_named": [],
+        "provisional_count": 0
+      }
+    },
+    {
+      "name": "Haumea",
+      "type": "Dwarf",
+      "distance_from_sun_km": 6480000000,
+      "orb_yr": 283.28,
+      "mass_kg": 4.0e+21,
+      "moons": {
+        "permanently_named": [
+          "Hi'iaka",
+          "Namaka"
+        ],
+        "provisional_count": 0
+      }
+    },
+    {
+      "name": "Makemake",
+      "type": "Dwarf",
+      "distance_from_sun_km": 6850000000,
+      "orb_yr": 305.34,
+      "mass_kg": 3.1e+21,
+      "moons": {
+        "permanently_named": [
+          "MK2"
+        ],
+        "provisional_count": 1
+      }
+    },
+    {
+      "name": "Eris",
+      "type": "Dwarf",
+      "distance_from_sun_km": 10120000000,
+      "orb_yr": 557.00,
+      "mass_kg": 1.66e+22,
+      "moons": {
+        "permanently_named": [
+          "Dysnomia"
+        ],
+        "provisional_count": 0
+      }
+    }
+  ],
+  "references": [
+    {"name": "International Astronomical Union (IAU)", "url": "https://www.iau.org/"},
+    {"name": "NASA Solar System Exploration", "url": "https://solarsystem.nasa.gov/"},
+    {"name": "Minor Planet Center", "url": "https://minorplanetcenter.net/"},
+    {"name": "JPL Solar System Dynamics", "url": "https://ssd.jpl.nasa.gov/"}
+  ]
+}
