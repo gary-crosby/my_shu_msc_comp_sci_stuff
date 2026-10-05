@@ -46,9 +46,7 @@ summary {
 
 .content{
   padding: 0rem 0rem 1rem 1rem;
- 
   margin: 0rem 1rem 0rem 1rem;
-
 }
 
 .discussion  {
@@ -101,3 +99,19 @@ a:active {
 .coming-soon summary, .coming-soon details, .coming-soon p, .coming-soon .discussion {
   color: rgba(148, 148, 148, 1.0)    /* light gray color for "coming soon" == (148, 148, 148) WCAG OK */  
 }
+
+.about {
+  font-size: 1em;
+  color: rgba(14, 14, 14, 1.0);
+  margin-top: 2.5em;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.about p {
+  font-size: 1em;
+  padding: em;
+  padding: 0rem 0rem 1rem 1rem;
+  border-radius: 8px;
+  margin: 0.0rem 0.5rem 1rem 1rem;
+}
+
