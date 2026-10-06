@@ -3,7 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Week 6 Discussion 6.7 - Solar System Explorer: Bootstrap Edition</title>
+    <title>
+      Week 6 Discussion 6.7 - Solar System Explorer: Bootstrap Edition
+    </title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -11,8 +13,8 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+   
   </head>
-  F
   <body>
     <div id="page-content">
       <div id="planet-info">
@@ -20,43 +22,43 @@
         <p style="color: red; font-weight: bold">
           Note: This is a partially-functioning, in-progress build. Not all
           features are implemented, and those that are may or may not work
-          peroperly. There is a fully-functioning but not fully-responsive version <a
-            href="../w5_d5.4.html"
-            target="_blank"
-            rel="noopener noreferrer"
+          peroperly. There is a fully-functioning but not fully-responsive
+          version
+          <a href="../w5_d5.4.html" target="_blank" rel="noopener noreferrer"
             >here</a
           >.
         </p>
         <p>Learn about the amazing planets in our solar system!</p>
       </div>
+      <div class="selection-columns">
+        <div id="planet-list">
+          <!-- Dynamically add planet checkboxes to the DOM from JSON data -->
+          <p>Step 1. Select at least one planet</p>
+        </div>
 
-      <div id="planet-list">
-        <!-- Dynamically add planet checkboxes to the DOM from JSON data -->
-        <p>Step 1. Select at least one planet</p>
-      </div>
-
-      <div id="planet-details">
-        <p>Step 2. Select at least one characteristic</p>
-        <label>
-          <input type="checkbox" name="details" value="type" />
-          Type
-        </label>
-        <label>
-          <input type="checkbox" name="details" value="massEarths" />
-          Mass (Earth masses)
-        </label>
-        <label>
-          <input type="checkbox" name="details" value="orbitYr" />
-          Orbital period (Earth years)
-        </label>
-        <label>
-          <input type="checkbox" name="details" value="orbitAu" />
-          Orbital distance from Sun (au)
-        </label>
-        <label>
-          <input type="checkbox" name="details" value="moons" />
-          Moons
-        </label>
+        <div id="planet-details">
+          <p>Step 2. Select at least one characteristic</p>
+          <label>
+            <input type="checkbox" name="details" value="type" />
+            Type
+          </label>
+          <label>
+            <input type="checkbox" name="details" value="massEarths" />
+            Mass (Earth masses)
+          </label>
+          <label>
+            <input type="checkbox" name="details" value="orbitYr" />
+            Orbital period (Earth years)
+          </label>
+          <label>
+            <input type="checkbox" name="details" value="orbitAu" />
+            Orbital distance from Sun (au)
+          </label>
+          <label>
+            <input type="checkbox" name="details" value="moons" />
+            Moons
+          </label>
+        </div>
       </div>
 
       <div id="selected-details">
@@ -75,7 +77,7 @@ Please select at least one planet and one characteristic.</textarea
         />
       </div>
 
- <details>
+      <details>
         <summary>Credits</summary>
         <p>
           Background image courtesy NASA from
@@ -86,7 +88,7 @@ Please select at least one planet and one characteristic.</textarea
             >https://science.nasa.gov/solar-system</a
           >
         </p>
-                       <p>The following fonts are used:</p>
+        <p>The following fonts are used:</p>
         <ul>
           <li>
             <strong>Orbitron</strong> was font designed by Matt McInerney and is
@@ -100,8 +102,12 @@ Please select at least one planet and one characteristic.</textarea
           </li>
           <li>
             <span
-              style="font-family: 'Space Mono', 'Consolas', 'Lucida Console',
-              'Courier New', monospace"><strong>Space Mono</strong> font
+              style="
+                font-family:
+                  &quot;Space Mono&quot;, &quot;Consolas&quot;,
+                  &quot;Lucida Console&quot;, &quot;Courier New&quot;, monospace;
+              "
+              ><strong>Space Mono</strong> font
             </span>
             was designed by Colophon Foundry and is available at
             <a
