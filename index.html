@@ -144,26 +144,32 @@
           <div class="content">
             <p id="week-5.4" class="discussion">Discussion 5.4</p>
             <p>
-              For this project, I created a web app called
+              For this discussion, I created
               <a href="w5_d5.4.html" target="_blank" rel="noopener noreferrer"
                 ><em>Solar System Explorer</em></a
-              >. This web app is an HTML + CSS + JavaScript port of a Python
-              project, <em>Modelling the Solar System</em>, I originally made to
-              fulfill the requirements of an assessment in SHU's
-              <em>Fundamentals of Computing</em>. (I can't believe that was a
-              year ago!)
+              >
+              which is loosely based on <em>Modelling the Solar System</em> that
+              I made to fulfill the requirements of an assessment in SHU's
+              <em>Fundamentals of Computing</em>. (Wow ... it's hard to believe
+              that was more than a year ago!) My original project was a desktop
+              app I built in Python (with JSON data file). I've ported it to a
+              single page web app by reconstructing it entirely in HTML, CSS and
+              JavaScript. The only things that were reused from the original
+              project were the general concept and the JSON data file.
             </p>
             <p>
-              The app ingests data from a JSON file containing data about the
-              planets in our solar system. The app has checkboxes for
+              The app ingests data from a JSON file. THe JSON file contains
+              various data about the planets in our solar system. The app has
+              checkboxes for
               <strong>planets</strong> and their
               <strong>characteristics</strong>. The checkboxes for
-              characteristics are hard-coded in HTML; the checkboxes for planets
-              are determined from the data in the JSON file and then dynamically
+              characteristics are hard-coded but the checkboxes for planets are
+              determined from the data in the JSON file and then dynamically
               added to the HTML DOM. The user selects the planet(s) and
               characteristic(s) that interest them. Every time the user's
-              selections changes, the app outputs to a textarea all the data
-              corresponding to the user's selections. The app works without a
+              selections changes, the app outputs to a textarea with either an
+              update message or with or with data from the JSON file that
+              corresponds to the user's selections. The app works without a
               mouse (i.e. keyboard only), and it works reasonably well on a
               mobile phone.
             </p>
