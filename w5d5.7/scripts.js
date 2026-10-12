@@ -30,12 +30,23 @@ function displayRandomXKCDComic() {
       const rndComImage = document.getElementById("rnd-com-image");
       rndComImage.src = comic.img;
       rndComImage.alt = comic.alt;
-      rndComImage.title = comic.alt + " [Click image to open full-size in a new tab.]"
+      rndComImage.title = comic.alt + " [Click to open full-size in a new tab]"
       rndComTitle.textContent = `Random XKCD Comic: ${comic.safe_title}`;
       //rndComTranscript.textContent = comic.transcript;
     }
   });
 }
+
+function displayFullSizeImageInNewTab(imageUrl) {
+  // Open the image in a new tab
+  const newTab = window.open(imageUrl, "_blank");
+  newTab.document.body.style.margin = "0"; 
+  newTab.document.body.style.display = "flex";
+  newTab.document.body.style.justifyContent = "center";
+  newTab.document.body.style.alignItems = "center";     
+}   
+
+
 
 function formatTranscript(transcript) {
   // Split the transcript into lines and remove empty lines
