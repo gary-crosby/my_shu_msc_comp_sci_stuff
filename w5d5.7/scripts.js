@@ -30,7 +30,7 @@ function displayRandomXKCDComic() {
       const rndComImage = document.getElementById("rnd-com-image");
       rndComImage.src = comic.img;
       rndComImage.alt = comic.alt;
-      rndComInage.title = comic.alt;
+      rndComInage.title = comic.alt + [Click image to ];
       rndComTitle.textContent = `Random XKCD Comic: ${comic.safe_title}`;
       //rndComTranscript.textContent = comic.transcript;
     }
