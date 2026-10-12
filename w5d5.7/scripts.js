@@ -45,6 +45,7 @@ function doShowAltJoke() {
   if (checkbox.checked) {
     if (textarea.hasAttribute("hidden")) {
       textarea.removeAttribute("hidden");
+      textarea.style.height = textarea.scrollHeight + "px";  // Resize textarea after it becomes unhidden
     }
   } else {
     textarea.setAttribute("hidden", "hidden");

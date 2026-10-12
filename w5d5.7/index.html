@@ -15,13 +15,18 @@
       <main>
         <h1 id="rnd-com-title">Randomizing ...</h1>
 
-        <img id="rnd-com-image" onclick="displayRandomXKCDComic();" />
+        <div class="comic-block">
+          <img id="rnd-com-image" onclick="displayRandomXKCDComic()" />
 
-        
-        <input id="showAltJoke" type="checkbox" onchange="doShowAltJoke();"/>
-        <label for="showAltJoke">Display the bonus joke!</label>
+          <!--
+          <div id="rnd-com-alt-joke">
+            <input id="showAltJoke" type="checkbox"/>
+            <label for="showAltJoke">Display the bonus joke!</label>
+          </div>
+        -->
 
-        <textarea id="altJoke" hidden></textarea>
+          <textarea id="altJoke" hidden></textarea>
+        </div>
         <input
           type="button"
           id="rnd-com-btn"

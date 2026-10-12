@@ -57,6 +57,29 @@ input[type="button"] {
   letter-spacing: 0.05em; /* Scales proportionally with the font size */
 }
 
+/* Shrinks to the image's width and centers; children fill that width */
+.comic-block {
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto;
+  align-items: center;
+}
+
+#rnd-com-alt-joke {
+  text-align: center;
+}
+
+#altJoke {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#altJoke[hidden] {
+  display: none;
+}
+
+
 img {
   max-width: 100%;
   height: auto;
