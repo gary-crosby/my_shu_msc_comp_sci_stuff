@@ -31,7 +31,7 @@ function displayRandomXKCDComic() {
       rndComImage.src = comic.img;
       rndComImage.alt = comic.alt;
       rndComImage.title = comic.alt;
-      rndComImageAltToggle = getElementById("altJoke");
+      rndComImageAltToggle = document.getElementById("altJoke");
       rndComImageAltToggle.textContent = comic.alt;
       rndComTitle.textContent = `Random XKCD Comic: ${comic.safe_title}`;
       //rndComTranscript.textContent = comic.transcript;
@@ -40,16 +40,14 @@ function displayRandomXKCDComic() {
 }
 
 function doShowAltJoke() {
-  const checkbox = getElementbyId("doShowAltJoke")
+  const checkbox = document.getElementById("showAltJoke");
+  const textarea = document.getElementById("altJoke");
   if (checkbox.checked) {
-    const textarea = getElementbyId("altJoke")
-    if (textarea.hasAttribute("hidden" == false)) {
+    if (textarea.hasAttribute("hidden")) {
       textarea.removeAttribute("hidden");
-    } else {
-      if (hasAttribute(checkbox.checked == true)) {
-        textarea.setAttribute("hidden", "hidden");
-      }
     }
+  } else {
+    textarea.setAttribute("hidden", "hidden");
   }
 }
 
