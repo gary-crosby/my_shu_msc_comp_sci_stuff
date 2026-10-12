@@ -37,6 +37,8 @@ function displayRandomXKCDComic() {
   });
 }
 
+
+
 function displayFullSizeImageInNewTab(imageUrl) {
   // Open the image in a new tab
   const newTab = window.open(imageUrl, "_blank");
