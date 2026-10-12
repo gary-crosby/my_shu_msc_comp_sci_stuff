@@ -40,12 +40,14 @@ function displayRandomXKCDComic() {
 }
 
 function doShowAltJoke() {
-  if (hasAttribute(doShowAltJoke.checked == true)) {
-    if (altJoke.hasAttribute("hidden" == false)) {
-      altJoke.setAttribute("hidden", "hidden");
+  const checkbox = getElementbyId("doShowAltJoke")
+  if (checkbox.checked) {
+    const textarea = getElementbyId("altJoke")
+    if (textarea.hasAttribute("hidden" == false)) {
+      textarea.removeAttribute("hidden");
     } else {
-      if (hasAttribute(doShowAltJoke.checked == true)) {
-        altJoke.removeAttribute("hidden");
+      if (hasAttribute(checkbox.checked == true)) {
+        textarea.setAttribute("hidden", "hidden");
       }
     }
   }
